@@ -1,0 +1,21 @@
+.anecdote-modal {
+    position: fixed;
+    left: -150vw;
+    transition: left 2s ease-out;
+    z-index: 10;
+}
+ 
+.stops-modal {
+    position: fixed;
+    right: -150vw;
+    transition: right 2s ease-out;
+    z-index: 10;
+}
+ 
+.anecdote-modal.Show {
+    left:0;
+}
+ 
+.stops-modal.Show {
+    right:0;
+}
