@@ -4,39 +4,20 @@ import './Mapload.css';
 import * as turf from '@turf/turf';
 import './Modal.css';
 import AnecdoteModal from './AnecdoteModal'
-import StopsModal from './StopsModal';
-import SideNavbar from './menu/SideNavbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Music from './pages/Music';
-import About from './pages/About';
  
-mapboxgl.accessToken = 'pk.eyJ1IjoicHJhbm1hbjExMTAiLCJhIjoiY2treHo3dzB5MGFlZDJvbzQxMDA4cGFxeiJ9.TR0TinMi5Fn3hd8JmF_yfQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoicHJhbm1hbjExMTAiLCJhIjoiY2trdmg3dDNqMjBidTJ1czFjZnJhdXczbCJ9.iiySDdrwpE0p-hFUAKtU7Q';
+
+
 const Mapload = () => {
     const mapContainerRef = useRef(null);
-  
-    var routeGeoJsonData = {"type":"FeatureCollection", "features":[
-        {"type":"Feature","geometry":{"type":"LineString","coordinates":[[77.55469,12.94438,0],[77.55468,12.9447,0],[77.55459,12.94474,0],[77.55452,12.94478,0],[77.55428,12.9449,0],[77.55387,12.94516,0],[77.55349,12.94542,0],[77.55328,12.94555,0],[77.55318,12.94562,0],[77.55316,12.94564,0],[77.55314,12.94568,0],[77.55312,12.94571,0],[77.55308,12.94586,0],[77.55307,12.94591,0],[77.55304,12.9461,0],[77.55299,12.94644,0],[77.55301,12.94681,0],[77.55299,12.94704,0],[77.55298,12.94709,0],[77.55298,12.9471,0],[77.55293,12.94735,0],[77.5529,12.94765,0],[77.55289,12.94775,0],[77.55288,12.94784,0],[77.55288,12.94794,0],[77.55289,12.9481,0],[77.55291,12.94834,0],[77.55291,12.94838,0],[77.55251,12.94835,0],[77.55252,12.94889,0],[77.55255,12.95009,0],[77.55257,12.95065,0],[77.55267,12.95076,0],[77.55247,12.95096,0],[77.55244,12.95101,0],[77.55226,12.95127,0],[77.55201,12.95157,0],[77.55185,12.95175,0],[77.55169,12.95196,0],[77.55175,12.95211,0],[77.55177,12.95235,0],[77.55178,12.95253,0],[77.55178,12.95264,0],[77.55178,12.95281,0],[77.55179,12.95296,0],[77.5518,12.95309,0],[77.55181,12.9532,0],[77.55183,12.95346,0],[77.55183,12.95375,0],[77.55187,12.95401,0],[77.55187,12.95403,0],[77.55192,12.95428,0],[77.55193,12.95438,0],[77.55192,12.95456,0],[77.55192,12.95513,0],[77.55193,12.95523,0],[77.55194,12.95546,0],[77.55195,12.9556,0],[77.55199,12.95594,0],[77.55201,12.9562,0],[77.55211,12.95669,0],[77.55216,12.9569,0],[77.55215,12.95706,0],[77.55216,12.95714,0],[77.55216,12.95722,0],[77.55215,12.95726,0],[77.55213,12.95734,0],[77.55211,12.95748,0],[77.55212,12.95748,0],[77.55245,12.95758,0],[77.55285,12.95771,0],[77.55333,12.95787,0],[77.55355,12.95793,0],[77.55366,12.95796,0],[77.55383,12.95802,0],[77.55402,12.9581,0],[77.55427,12.95818,0],[77.55451,12.95827,0],[77.5546,12.95831,0],[77.55481,12.95839,0],[77.55497,12.95849,0],[77.5551,12.95859,0],[77.55526,12.95875,0],[77.55527,12.95876,0],[77.55549,12.95908,0],[77.55556,12.95919,0],[77.55572,12.95944,0],[77.55586,12.95964,0],[77.55595,12.95974,0],[77.55603,12.95981,0],[77.55605,12.95983,0],[77.55612,12.95989,0],[77.55624,12.95997,0],[77.55651,12.96013,0],[77.55666,12.96023,0],[77.55691,12.96042,0],[77.5573,12.96068,0],[77.55768,12.96088,0],[77.55788,12.96097,0],[77.55808,12.96103,0],[77.55826,12.96108,0],[77.55831,12.9611,0],[77.55844,12.96112,0],[77.55854,12.96115,0],[77.5589,12.96122,0],[77.55908,12.96126,0],[77.55926,12.9613,0],[77.55927,12.9613,0],[77.55962,12.96137,0],[77.56001,12.96146,0],[77.56036,12.96153,0],[77.56065,12.96159,0],[77.56091,12.9616,0],[77.561,12.96161,0],[77.56119,12.96161,0],[77.5617,12.96161,0],[77.56192,12.96163,0],[77.5622,12.96166,0],[77.56229,12.96167,0],[77.56241,12.96169,0],[77.56258,12.96173,0],[77.56279,12.96179,0],[77.56318,12.96189,0],[77.56332,12.96192,0],[77.56349,12.962,0],[77.56376,12.96209,0],[77.56405,12.9622,0],[77.56437,12.96233,0],[77.56439,12.96234,0],[77.56456,12.9624,0],[77.56485,12.96249,0],[77.56506,12.96256,0],[77.56511,12.96258,0],[77.56516,12.96259,0],[77.56523,12.96261,0],[77.56525,12.96262,0],[77.5656,12.96272,0],[77.56596,12.96282,0],[77.56613,12.96288,0],[77.56656,12.963,0],[77.56666,12.96304,0],[77.56701,12.96316,0],[77.56736,12.96329,0],[77.56752,12.96337,0],[77.56879,12.96387,0],[77.56918,12.964,0],[77.56933,12.96405,0],[77.56935,12.96406,0],[77.56937,12.96407,0],[77.56941,12.96408,0],[77.56985,12.96421,0],[77.56996,12.96424,0],[77.56999,12.96425,0],[77.57,12.96425,0],[77.57001,12.96426,0],[77.57002,12.96426,0],[77.57006,12.96426,0],[77.57021,12.96429,0],[77.57057,12.96432,0],[77.5709,12.96434,0],[77.57175,12.96442,0],[77.57178,12.96442,0],[77.57266,12.96449,0],[77.57399,12.96461,0],[77.57432,12.96464,0],[77.5745,12.96467,0],[77.57464,12.9647,0],[77.57514,12.96475,0],[77.57531,12.96474,0],[77.57551,12.96471,0],[77.57566,12.96467,0],[77.57575,12.96463,0],[77.57619,12.96444,0],[77.57633,12.96439,0],[77.57645,12.96434,0],[77.5766,12.96427,0],[77.57679,12.96422,0],[77.57686,12.9642,0],[77.57697,12.96417,0],[77.57714,12.96412,0],[77.5775,12.96402,0],[77.57751,12.96401,0],[77.57785,12.96389,0],[77.57806,12.96381,0],[77.57822,12.96376,0],[77.57836,12.96372,0],[77.57847,12.96369,0],[77.5786,12.96367,0],[77.57872,12.96368,0],[77.57884,12.96367,0],[77.57889,12.96367,0],[77.5789,12.96367,0],[77.579,12.96368,0],[77.57919,12.96369,0],[77.57939,12.9637,0],[77.57958,12.9637,0],[77.57975,12.9637,0],[77.57993,12.96368,0],[77.58016,12.96366,0],[77.58036,12.96364,0],[77.58056,12.96362,0],[77.58076,12.9636,0],[77.5812,12.96355,0],[77.58161,12.96352,0],[77.58172,12.96352,0],[77.58179,12.96353,0],[77.58185,12.96355,0],[77.58194,12.9636,0],[77.58204,12.96368,0],[77.5821,12.96375,0],[77.5822,12.96389,0],[77.58227,12.96401,0],[77.58267,12.96399,0],[77.58291,12.96397,0],[77.58346,12.96393,0],[77.58359,12.96391,0],[77.58386,12.9639,0],[77.58404,12.9639,0],[77.58409,12.96388,0],[77.58414,12.96386,0],[77.58424,12.96382,0],[77.5843,12.96381,0],[77.58436,12.9638,0],[77.58444,12.96378,0],[77.58452,12.9638,0],[77.58469,12.96381,0],[77.58489,12.96385,0],[77.5851,12.96388,0],[77.58521,12.96391,0],[77.5853,12.96395,0],[77.58593,12.96462,0],[77.58655,12.96528,0],[77.58673,12.96553,0],[77.58675,12.96573,0],[77.58679,12.9659,0],[77.58683,12.96599,0],[77.58698,12.96615,0],[77.58714,12.96633,0],[77.5873,12.96654,0],[77.58737,12.96664,0],[77.5874,12.96668,0],[77.58742,12.96677,0],[77.58746,12.96696,0],[77.58748,12.96704,0],[77.58737,12.96758,0],[77.5874,12.96766,0],[77.58742,12.96772,0],[77.58747,12.9678,0],[77.58817,12.96774,0],[77.58832,12.96776,0],[77.58846,12.96778,0],[77.58859,12.96781,0],[77.58877,12.96786,0],[77.5888,12.96787,0],[77.58882,12.96788,0],[77.58886,12.96789,0],[77.58889,12.96791,0],[77.58892,12.96792,0],[77.58894,12.96793,0],[77.58898,12.96794,0],[77.589,12.96796,0],[77.58901,12.96796,0],[77.58904,12.96798,0],[77.58934,12.96817,0],[77.58961,12.96841,0],[77.59212,12.97054,0],[77.59281,12.97114,0],[77.59329,12.97154,0],[77.59362,12.97185,0],[77.59372,12.97194,0],[77.59397,12.97216,0],[77.59418,12.97239,0],[77.59452,12.97281,0],[77.59491,12.9733,0],[77.59498,12.97337,0],[77.59502,12.97342,0],[77.59506,12.97346,0],[77.59508,12.97349,0],[77.59511,12.97351,0],[77.59514,12.97354,0],[77.59518,12.97358,0],[77.59524,12.97363,0],[77.59529,12.97368,0],[77.59537,12.97374,0],[77.59585,12.97414,0],[77.59643,12.97462,0],[77.59679,12.97491,0],[77.59684,12.97495,0],[77.59686,12.97497,0],[77.5969,12.97499,0],[77.59738,12.97533,0],[77.59781,12.97563,0],[77.59794,12.97572,0],[77.59806,12.97581,0],[77.59825,12.97594,0],[77.5987,12.97627,0],[77.59882,12.97636,0],[77.59906,12.97655,0],[77.59923,12.97667,0],[77.59934,12.97668,0],[77.60032,12.97665,0],[77.60106,12.97663,0],[77.60159,12.97662,0],[77.60181,12.97663,0],[77.6019,12.97663,0],[77.60196,12.97663,0],[77.60198,12.97663,0],[77.602,12.97663,0],[77.60203,12.97662,0],[77.60223,12.97655,0],[77.60236,12.97652,0],[77.60271,12.97643,0],[77.60378,12.97617,0],[77.60432,12.97604,0],[77.60577,12.97569,0],[77.60702,12.97539,0],[77.60738,12.97531,0],[77.60769,12.97523,0],[77.60793,12.97518,0],[77.60805,12.97515,0],[77.60859,12.97502,0],[77.60912,12.97489,0],[77.60984,12.97471,0],[77.61038,12.97458,0],[77.61111,12.9744,0],[77.61182,12.97425,0],[77.61254,12.97409,0],[77.61275,12.97404,0],[77.61308,12.97397,0],[77.61383,12.97381,0],[77.61391,12.97379,0],[77.61463,12.97363,0],[77.61463,12.97362,0],[77.61518,12.9735,0],[77.61572,12.97337,0],[77.61618,12.97326,0],[77.61624,12.97325,0],[77.61661,12.97317,0],[77.61687,12.97314,0],[77.61707,12.97306,0],[77.61752,12.97295,0],[77.61775,12.97289,0],[77.61831,12.97275,0],[77.61838,12.97273,0],[77.61843,12.97272,0],[77.61855,12.97268,0],[77.61863,12.97267,0],[77.6187,12.97265,0],[77.61877,12.97264,0],[77.61884,12.97263,0],[77.6189,12.97262,0],[77.61898,12.97262,0],[77.61901,12.97262,0],[77.61908,12.97262,0],[77.61919,12.97262,0],[77.61929,12.97262,0],[77.61946,12.97264,0],[77.61958,12.97264,0],[77.61972,12.97272,0],[77.6198,12.97275,0],[77.61984,12.97276,0],[77.61987,12.97278,0],[77.6199,12.97279,0],[77.61992,12.97279,0],[77.61994,12.9728,0],[77.61995,12.9728,0],[77.61996,12.9728,0],[77.61998,12.9728,0],[77.61999,12.9728,0],[77.62001,12.9728,0],[77.62002,12.9728,0],[77.62003,12.9728,0],[77.6203,12.97273,0],[77.62032,12.97273,0],[77.62034,12.97273,0],[77.62037,12.97272,0],[77.6204,12.97272,0],[77.62045,12.97271,0],[77.62048,12.97271,0],[77.62051,12.97271,0],[77.62054,12.97271,0],[77.62057,12.97271,0],[77.62071,12.97273,0],[77.62081,12.97275,0],[77.62093,12.97277,0],[77.62102,12.97279,0],[77.62109,12.97281,0],[77.62113,12.97282,0],[77.62117,12.97283,0],[77.62122,12.97285,0],[77.6213,12.97287,0],[77.62138,12.9729,0],[77.62153,12.97296,0],[77.62173,12.97303,0],[77.62187,12.97309,0],[77.62203,12.97315,0],[77.62228,12.97325,0],[77.62238,12.97329,0],[77.62257,12.9734,0],[77.62313,12.97373,0],[77.62341,12.9739,0],[77.62344,12.97391,0],[77.62358,12.974,0],[77.62363,12.97403,0],[77.62376,12.97411,0],[77.62377,12.97411,0],[77.62395,12.97422,0],[77.62467,12.97467,0],[77.62488,12.97481,0],[77.6253,12.97506,0],[77.62542,12.97514,0],[77.62568,12.97531,0],[77.62576,12.97538,0],[77.62587,12.97549,0],[77.62598,12.97559,0],[77.62598,12.9756,0],[77.62609,12.97574,0],[77.62671,12.97659,0],[77.62677,12.97668,0],[77.62715,12.97726,0],[77.62723,12.97736,0],[77.62732,12.97746,0],[77.62738,12.97753,0],[77.6274,12.97754,0],[77.62745,12.97759,0],[77.62756,12.97767,0],[77.62786,12.97786,0],[77.62798,12.97793,0],[77.6281,12.97799,0],[77.6281,12.978,0],[77.6282,12.97804,0],[77.62822,12.97805,0],[77.62832,12.97811,0],[77.62869,12.9784,0],[77.62874,12.97845,0],[77.62879,12.97853,0],[77.62888,12.97849,0],[77.62938,12.97848,0],[77.62976,12.97847,0],[77.62984,12.97847,0],[77.63004,12.97844,0],[77.63029,12.97841,0],[77.63042,12.9784,0],[77.63061,12.97838,0],[77.63075,12.97836,0],[77.63089,12.97834,0],[77.63128,12.9783,0],[77.63131,12.9783,0],[77.63136,12.97829,0],[77.63163,12.97828,0],[77.63192,12.97824,0],[77.63219,12.97822,0],[77.6324,12.9782,0],[77.63288,12.97818,0],[77.63304,12.97819,0],[77.63317,12.97819,0],[77.63318,12.97819,0],[77.63324,12.97819,0],[77.6334,12.9782,0],[77.63367,12.97821,0],[77.63402,12.97822,0],[77.6341,12.97822,0],[77.63483,12.97823,0],[77.63539,12.97825,0],[77.63565,12.97826,0],[77.63613,12.97826,0],[77.63665,12.9783,0],[77.63676,12.97829,0],[77.6374,12.97832,0],[77.63758,12.97833,0],[77.63793,12.97835,0],[77.63812,12.97835,0],[77.63841,12.97835,0],[77.63887,12.97837,0],[77.63932,12.97838,0],[77.63978,12.9784,0],[77.63997,12.97841,0],[77.64015,12.97842,0],[77.64024,12.97842,0],[77.64061,12.97842,0],[77.64078,12.97842,0],[77.64083,12.97842,0]]},"properties":{"name":"Directions from Srinagar Bus Stop, 18, 17th Main Rd, Raghavendra Block, Dasarhalli, Srinagar, Banashankari, Bengaluru, Karnataka to Indiranagar, Bengaluru, Karnataka","tessellate":true}}
-        ]};
  
-        var point = {
-            'type': 'FeatureCollection',
-            'features': [{
-                'type': 'Feature',
-                'properties': {
-                    'description': 'Anecdote and stuff',
-                    'icon': 'bus'
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [77.55469,12.94438]
-                }
-            }]
-        };
- 
-    const [lng, setLng] = useState(77.6517347);
-    const [lat, setLat] = useState(12.9679711);
-    const [zoom, setZoom] = useState(13);
+    const [busNo, setBusNo] = useState(null);
+    const [lng, setLng] = useState(77.5985813140869);
+    const [lat, setLat] = useState(12.943333543267157);
+    const [zoom, setZoom] = useState(12.5);
     const [displayMenu, setDisplayMenu] = useState(false);
+    const [journeyStarted, setJourneyStarted] = useState(false);
+    // const [mute, setMute] = useState(false);
   
     // Initialize map when component mounts
     useEffect(() => {
@@ -46,7 +27,7 @@ const Mapload = () => {
         center: [lng, lat],
         zoom: zoom
       });
-  
+
       // Add navigation control (the +/- zoom buttons)
       map.addControl(new mapboxgl.NavigationControl(), 'top-right');
   
@@ -55,39 +36,95 @@ const Mapload = () => {
         setLat(map.getCenter().lat.toFixed(4));
         setZoom(map.getZoom().toFixed(2));
       });
- 
-        // Calculate the distance in kilometers between route start/end point.
-        var lineDistance = turf.length(routeGeoJsonData.features[0]);
- 
-        var arc = [];
-     
+
+        var point = {
+            'type': 'FeatureCollection',
+            'features': [{
+                'type': 'Feature',
+                'properties': {
+                    'description': 'random point to iterate',
+                    'icon': 'bus'
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [0,0]
+                }
+            }]
+        };
+
+        var point1 = {
+            'type': 'FeatureCollection',
+            'features': [{
+                'type': 'Feature',
+                'properties': {
+                    'description': 'random point to iterate',
+                    'icon': 'bus'
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [0,0]
+                }
+            }]
+        };
+
+        var point2 = {
+            'type': 'FeatureCollection',
+            'features': [{
+                'type': 'Feature',
+                'properties': {
+                    'description': 'random point to iterate',
+                    'icon': 'bus'
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [0,0]
+                }
+            }]
+        };
+
         // Number of steps to use in the arc and animation, more steps means
         // a smoother arc and animation, but too many steps will result in a
         // low frame rate
-        var steps = 2500;
+        var steps = 3000;
+        var prevStart = 0;
+        var prevEnd = 0;
+        var animationFrameId;
+        var mute = false;
  
         var counter = 0;
-     
-        // Draw an arc between the `origin` & `destination` of the two points
-        for (var i = 0; i < lineDistance; i += lineDistance / steps) {
-            var segment = turf.along(routeGeoJsonData.features[0], i);
-            arc.push(segment.geometry.coordinates);
-        }
-        
-        routeGeoJsonData.features[0].geometry.coordinates = arc;
+        var markers = null;
  
         map.on('load', function () {
-            // Add a source and layer displaying a point which will be animated in a circle.
-            map.addSource('route0001', {
+
+            map.addSource('currRoute', {
                 'type': 'geojson',
-                'data': routeGeoJsonData
+                'data': point1
             });
-            
+
+            map.addLayer({
+                'id': 'currRoute',
+                'type': 'line',
+                'source': 'currRoute',
+                'layout': {
+                'line-join': 'round',
+                'line-cap': 'round'
+                },
+                'paint': {
+                'line-color': '#2077ce',
+                'line-width': 5
+                }
+            });
+
+            map.addSource('currstops', {
+                'type': 'geojson',
+                'data': point2
+            });
+
             map.addSource('point', {
                 'type': 'geojson',
                 'data': point
             });
- 
+
             map.addLayer({
                 'id': 'point',
                 'source': 'point',
@@ -102,9 +139,30 @@ const Mapload = () => {
                 }
             });
 
+            // Add a source and layer displaying a point which will be animated in a circle
+
+            map.addSource('busstops', {
+                'type': 'geojson',
+                'data': 'https://pranman11.github.io/bus-data/busstops.geojson'
+            });
+
+            map.addLayer({
+                'id': 'busstops',
+                'source': 'busstops',
+                'type': 'symbol',
+                'layout': {
+                    'icon-size': 2.5,
+                    'icon-image': 'bus',
+                    'icon-rotate': ['get', 'bearing'],
+                    'icon-rotation-alignment': 'map',
+                    'icon-allow-overlap': true,
+                    'icon-ignore-placement': true
+                },
+            });
+
             var popup = new mapboxgl.Popup();
- 
-            function animate() {
+
+            function animate(routeGeoJsonData) {
                     var start =
                     routeGeoJsonData.features[0].geometry.coordinates[
                         counter >= steps ? counter - 1 : counter
@@ -113,8 +171,26 @@ const Mapload = () => {
                     routeGeoJsonData.features[0].geometry.coordinates[
                         counter >= steps ? counter : counter + 1
                     ];
-                    if (!start || !end) return;
+                    // console.log("start: " + start + "end: " + end);
+                    if (!start || !end || (prevStart === start && prevEnd === end)){
+                        counter = 0;
+                        
+                        console.log("journey ended");
+                        // map.flyTo({center: [lng, lat],
+                        //     zoom: 12,
+                        //     speed: 0.5,
+                        // });
+                        cancelAnimationFrame( animationFrameId );
+                        map.getSource('point').setData(point1);
+                        map.getSource('currRoute').setData(point1);
+                        setJourneyStarted(false);
+                        setDisplayMenu(false);
+                        setBusNo(null);
+                        return;
+                    }
                     
+                    prevStart = start;
+                    prevEnd = end;
                     // Update point geometry to a new position based on counter denoting
                     // the index to access the arc
                     point.features[0].geometry.coordinates =
@@ -130,47 +206,193 @@ const Mapload = () => {
                     
                     // Update the source with this new data
                     map.getSource('point').setData(point);
-                    map.panTo(start, {duration: 100});
+                    // map.panTo(start, {duration: 100});
                     
                     // Request the next frame of animation as long as the end has not been reached
                     if (counter < steps) {
-                        requestAnimationFrame(animate);
+                        animationFrameId = requestAnimationFrame(() => animate(routeGeoJsonData));
                     }
-                    
                     counter = counter + 1;
                 }
 
-                function startJourney() {
-                    map.flyTo({center: point.features[0].geometry.coordinates,
-                        zoom: 16,
-                        speed: 0.5,
-                    });
-                    setTimeout(animate, 2000);
+            map.on('click', 'busstops', (e) => {
+                if(!journeyStarted) {
+                    setJourneyStarted(true);
+                    map.getCanvas().style.cursor = 'pointer';
+                    console.log(e.features[0].properties);
+                    setBusNo(e.features[0].properties.busNo);
+                    steps = e.features[0].properties.steps;
+                    var busNo = e.features[0].properties.busNo;
+                    var busStopName = e.features[0].properties.description;
+                    var coordinates = e.features[0].geometry.coordinates.slice();
+                    var busRouteUrl = e.features[0].properties.busRouteUrl;
 
-                    setDisplayMenu(true);
+                    var audioJourney = new Audio(e.features[0].properties.journeySoundUrl);
+                    var audioReturnJourney =  new Audio(e.features[0].properties.journeyReturnUrl)
+                    var busStopAudio = new Audio(e.features[0].properties.soundUrl);
+                    busStopAudio.play();
 
-                    popup.remove();
-                }
- 
-                map.on('click', 'point', function (e) {    
-                    // var coordinates = e.features[0].geometry.coordinates.slice();
-                    // var description = e.features[0].properties.description;
-                    
                     // Ensure that if the map is zoomed out such that multiple
                     // copies of the feature are visible, the popup appears
                     // over the copy being pointed to.
-                    // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                        // coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                    // }
-                    
-                    popup.setLngLat(point.features[0].geometry.coordinates)
-                        .setHTML('<strong>A Little Night Music</strong><p>The Arlington Players\' production of Stephen Sondheim\'s  <a href="http://www.thearlingtonplayers.org/drupal-6.20/node/4661/show" target="_blank" title="Opens in a new window"><em>A Little Night Music</em></a> comes to the Kogod Cradle at The Mead Center for American Theater (1101 6th Street SW) this weekend and next. 8:00 p.m.</p><button id="start-journey">Start Journey</button>')
-                        .addTo(map);
-                        
-                    document.getElementById('start-journey').addEventListener('click', startJourney)
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
 
+                    popup.setLngLat(e.lngLat)
+                        .setHTML('<p><strong>'+'Bus: '+ busNo + '<br>Bus Stop: ' + busStopName+'</strong></p><button id="startjourney-'+busNo+'">Start Journey</button><br><br><button id="startReturnjourney-'+busNo+'">Start Return Journey</button>')
+                        .addTo(map);
+                    
+                    popup.on('close', function(e) {
+                        busStopAudio.pause();
+                    })
+  
+                    document.getElementById('startjourney-'+busNo).addEventListener('click', () => {
+                        map.getSource('currRoute').setData(point1);
+                        popup.remove();
+                        console.log(this);
+
+                        var routeGeoJsonData = null;
+                        // audioJourney.addEventListener('loadeddata', (event) =>  {
+                            document.getElementById('mute-button').addEventListener('click', () => {
+                                if(!mute){
+                                    console.log(mute);
+                                    audioJourney.volume = 0;
+                                    mute = true;
+                                    console.log(mute);
+                                } else {
+                                    console.log(mute);
+                                    audioJourney.volume = 1.0;
+                                }
+                            });
+
+                            document.getElementById('refresh-map').addEventListener('click', () => {
+                                counter = 0;
                         
+                                console.log("journey ended");
+                                // map.flyTo({center: [lng, lat],
+                                //     zoom: 12,
+                                //     speed: 0.5,
+                                // });
+                                cancelAnimationFrame( animationFrameId );
+                                map.getSource('point').setData(point1);
+                                map.getSource('currRoute').setData(point1);
+                                audioJourney.pause();
+                                setJourneyStarted(false);
+                                setDisplayMenu(false);
+                                setBusNo(null);
+                            });
+
+                            fetch(busRouteUrl)
+                            .then(response => response.json())
+                            .then(data => {
+                                routeGeoJsonData = data;
+                                map.getSource('currRoute').setData(routeGeoJsonData.features[0]);
+    
+                                var lineDistance = null;
+                                lineDistance = turf.length(routeGeoJsonData.features[0]);
+                                var arc = [];
+        
+                                console.log(routeGeoJsonData.features[0].geometry.coordinates[0]);
+        
+                                // map.flyTo({center: routeGeoJsonData.features[0].geometry.coordinates[0],
+                                //     zoom: 13,
+                                //     speed: 0.5,
+                                // });
+    
+                                // Draw an arc between the `origin` & `destination` of the two points
+                                for (var i = 0; i < lineDistance; i += lineDistance / steps) {
+                                    var segment = turf.along(routeGeoJsonData.features[0], i);
+                                    arc.push(segment.geometry.coordinates);
+                                 }
+                                routeGeoJsonData.features[0].geometry.coordinates = arc;
+    
+                                busStopAudio.pause();
+                                audioJourney.play();
+                                setTimeout(() => animate(routeGeoJsonData), 4000);
+        
+                                setDisplayMenu(true);
+                            })
+                            .catch(err => {
+                                console.log(err);
+                            });
+                        // });
+
                     });
+
+                    document.getElementById('startReturnjourney-'+busNo).addEventListener('click', () => {
+                        map.getSource('currRoute').setData(point1);
+                        popup.remove();
+                        console.log(this);
+
+                        var routeGeoJsonData = null;
+
+                            document.getElementById('mute-button').addEventListener('click', () => {
+                                if(!mute){
+                                    audioReturnJourney.volume = 0;
+                                    mute = true;
+                                } else {
+                                    audioReturnJourney.volume = 1.0;
+                                    mute = false;
+                                }
+                            });
+
+                            document.getElementById('refresh-map').addEventListener('click', () => {
+                                counter = 0;
+                        
+                                console.log("journey ended");
+                                // map.flyTo({center: [lng, lat],
+                                //     zoom: 12,
+                                //     speed: 0.5,
+                                // });
+                                cancelAnimationFrame( animationFrameId );
+                                audioReturnJourney.pause();
+                                map.getSource('point').setData(point1);
+                                map.getSource('currRoute').setData(point1);
+                                setJourneyStarted(false);
+                                setDisplayMenu(false);
+                                setBusNo(null);
+                            });
+                            
+                        fetch(busRouteUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                            routeGeoJsonData = data;
+                            routeGeoJsonData.features[0].geometry.coordinates.reverse();
+                            map.getSource('currRoute').setData(routeGeoJsonData.features[0]);
+                            
+                            var lineDistance = null;
+                            lineDistance = turf.length(routeGeoJsonData.features[0]);
+                            var arc = [];
+    
+                            console.log(routeGeoJsonData.features[0].geometry.coordinates[0]);
+    
+                            // map.flyTo({center: routeGeoJsonData.features[0].geometry.coordinates[0],
+                            //     zoom: 13,
+                            //     speed: 0.5,
+                            // });
+
+                            // Draw an arc between the `origin` & `destination` of the two points
+                            for (var i = 0; i < lineDistance; i += lineDistance / steps) {
+                                var segment = turf.along(routeGeoJsonData.features[0], i);
+                                arc.push(segment.geometry.coordinates);
+                             }
+                            routeGeoJsonData.features[0].geometry.coordinates = arc;
+
+                            busStopAudio.pause();
+                            audioReturnJourney.play();
+                            setTimeout(() => animate(routeGeoJsonData), 4000);
+    
+                            setDisplayMenu(true);
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        });
+                    });
+                } else {
+                    //
+                }
+            });
         });
       // Clean up on unmount
       return () => map.remove();
@@ -178,18 +400,15 @@ const Mapload = () => {
   
     return (
       <div>
-        <Router>
+        {/* <Router>
             <SideNavbar />
             <Switch>
                 <Route path='/about' component={About} />
                 <Route path='/music' component={Music} />
             </Switch>
-        </Router>
+        </Router> */}
         <div className={`anecdote-modal ${displayMenu ? 'Show' : ''}`}>
-            <AnecdoteModal />
-        </div>
-        <div className={`stops-modal ${displayMenu ? 'Show' : ''}`}>
-            <StopsModal />
+            <AnecdoteModal busNo = {busNo}/>
         </div>
         <div className='map-container' ref={mapContainerRef} />
       </div>

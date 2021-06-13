@@ -1,44 +1,44 @@
 .navbar {
     position: absolute;
-    /* background-color: #060b26; */
-    height: 80px;
-    width: 250px;
+    background-color: #060b26;
+    height: 100vh;
+    width: 60px;
     display: flex;
     justify-content: start;
     align-items: center;
     z-index: 11;
   }
-  
+  .map-menu{
+    margin-top: 55vh;
+    margin-left: 10px;
+  }
+  .map-menu-item{
+    height: 50px;
+    width: 50px;
+  }
   .menu-bars {
-    margin-left: 2rem;
-    font-size: 2rem;
+    margin-left: 1rem;
+    font-size: 1.5rem;
     background: none;
     z-index: 11;
   }
-  
   .nav-menu {
     z-index: 11;
     background-color: #060b26;
-    width: 250px;
+    width: 70px;
     height: 100vh;
     display: flex;
     justify-content: center;
     position: fixed;
     top: 0;
-    left: -100%;
-    transition: 850ms;
-  }
-  
-  .nav-menu.active {
     left: 0;
-    transition: 350ms;
   }
-  
   .nav-text {
+    margin-right: 8px;
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 8px 0px 8px 16px;
+    padding: 8px 0px 8px 8px;
     list-style: none;
     height: 60px;
   }
