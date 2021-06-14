@@ -70,6 +70,9 @@ header.masthead h1 {
     padding: 7rem;
   }
 }
+.sound-container{
+  background: blue;
+}
 
 .features-icons {
   padding-top: 7rem;

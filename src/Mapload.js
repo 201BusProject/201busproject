@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
+import { ZoomControl } from 'mapbox-gl-controls';
 import './Mapload.css';
 import * as turf from '@turf/turf';
 import './Modal.css';
@@ -17,7 +18,6 @@ const Mapload = () => {
     const [zoom, setZoom] = useState(12.5);
     const [displayMenu, setDisplayMenu] = useState(false);
     const [journeyStarted, setJourneyStarted] = useState(false);
-    // const [mute, setMute] = useState(false);
   
     // Initialize map when component mounts
     useEffect(() => {
@@ -29,7 +29,7 @@ const Mapload = () => {
       });
 
       // Add navigation control (the +/- zoom buttons)
-      map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+      map.addControl(new ZoomControl(), 'top-right');
   
       map.on('move', () => {
         setLng(map.getCenter().lng.toFixed(4));
@@ -240,7 +240,7 @@ const Mapload = () => {
                     }
 
                     popup.setLngLat(e.lngLat)
-                        .setHTML('<p><strong>'+'Bus: '+ busNo + '<br>Bus Stop: ' + busStopName+'</strong></p><button id="startjourney-'+busNo+'">Start Journey</button><br><br><button id="startReturnjourney-'+busNo+'">Start Return Journey</button>')
+                        .setHTML('<p><strong>You are at '+busStopName + ' Bus Stop, waiting for bus '+ busNo +'</strong> to come. <i class="icon-volume-2"></i></p><br/><button id="startjourney-'+busNo+'">Start Journey</button><br><br><button id="startReturnjourney-'+busNo+'">Start Return Journey</button>')
                         .addTo(map);
                     
                     popup.on('close', function(e) {
