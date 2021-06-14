@@ -61,7 +61,9 @@
 .about {
     /* margin-left: 20vh; */
     background-image: url('../about-page-img-2.png');
-    background-size: 100%;
+    background-size: 90%;
+    background-repeat: no-repeat, repeat;
+    background-position: center;
 }
 
 .content{
@@ -118,15 +120,23 @@
     padding-bottom: 70px;
 }
 
-.icon-bra-ails {
+/* .icon-bra-ails {
     padding-bottom: 30px;
-}
+} */
 
 .icon-ails {
     color: #3F3D56 !important;
-    font-size: 40px;
+    font-size: 20px;
 }
 
+.sound-page-button{ 
+    text-decoration: none !important;
+    font-size: 70px;
+}
+
+.soundcloud-button{
+    padding-top: 10vh;
+}
 .footer {
     color: white;
     text-align: center;
