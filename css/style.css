@@ -61,9 +61,7 @@
 .about {
     /* margin-left: 20vh; */
     background-image: url('../about-page-img-2.png');
-    background-size: 90%;
-    background-repeat: no-repeat, repeat;
-    background-position: center;
+    background-size: 100%;
 }
 
 .content{
@@ -130,10 +128,13 @@
 }
 
 .sound-page-button{ 
-    text-decoration: none !important;
     font-size: 70px;
 }
 
+.soundpage-btn-a{
+    text-decoration: none !important;
+    color: #2077ce;
+}
 .soundcloud-button{
     padding-top: 10vh;
 }
