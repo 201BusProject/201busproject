@@ -60,7 +60,7 @@
 
 .about {
     /* margin-left: 20vh; */
-    background-image: url('../about-page-img-2.png');
+    background-image: url('../assets/about-page-img-2.png');
     background-size: 100%;
 }
 
@@ -118,15 +118,26 @@
     padding-bottom: 70px;
 }
 
-.icon-bra-ails {
+/* .icon-bra-ails {
     padding-bottom: 30px;
-}
+} */
 
 .icon-ails {
     color: #3F3D56 !important;
-    font-size: 40px;
+    font-size: 20px;
 }
 
+.sound-page-button{ 
+    font-size: 70px;
+}
+
+.soundpage-btn-a{
+    text-decoration: none !important;
+    color: #2077ce;
+}
+.soundcloud-button{
+    padding-top: 10vh;
+}
 .footer {
     color: white;
     text-align: center;

@@ -17,7 +17,7 @@ const Mapload = () => {
     const [lat, setLat] = useState(12.943333543267157);
     const [zoom, setZoom] = useState(12.5);
     const [displayMenu, setDisplayMenu] = useState(false);
-    const [journeyStarted, setJourneyStarted] = useState(false);
+    // const [journeyStarted, setJourneyStarted] = useState(false);
   
     // Initialize map when component mounts
     useEffect(() => {
@@ -90,9 +90,12 @@ const Mapload = () => {
         var prevEnd = 0;
         var animationFrameId;
         var mute = false;
+        var journeyStarted = false;
+        var audioJourney = null;
+        var audioReturnJourney = null;
+        var busStopAudio = null;
  
         var counter = 0;
-        var markers = null;
  
         map.on('load', function () {
 
@@ -183,7 +186,8 @@ const Mapload = () => {
                         cancelAnimationFrame( animationFrameId );
                         map.getSource('point').setData(point1);
                         map.getSource('currRoute').setData(point1);
-                        setJourneyStarted(false);
+                        journeyStarted = false;
+                        console.log("journey started: " + journeyStarted);
                         setDisplayMenu(false);
                         setBusNo(null);
                         return;
@@ -217,7 +221,7 @@ const Mapload = () => {
 
             map.on('click', 'busstops', (e) => {
                 if(!journeyStarted) {
-                    setJourneyStarted(true);
+                    journeyStarted = true;
                     map.getCanvas().style.cursor = 'pointer';
                     console.log(e.features[0].properties);
                     setBusNo(e.features[0].properties.busNo);
@@ -227,9 +231,9 @@ const Mapload = () => {
                     var coordinates = e.features[0].geometry.coordinates.slice();
                     var busRouteUrl = e.features[0].properties.busRouteUrl;
 
-                    var audioJourney = new Audio(e.features[0].properties.journeySoundUrl);
-                    var audioReturnJourney =  new Audio(e.features[0].properties.journeyReturnUrl)
-                    var busStopAudio = new Audio(e.features[0].properties.soundUrl);
+                    audioJourney = new Audio(process.env.PUBLIC_URL+e.features[0].properties.journeySoundUrl);
+                    audioReturnJourney =  new Audio(process.env.PUBLIC_URL+e.features[0].properties.journeyReturnUrl)
+                    busStopAudio = new Audio(process.env.PUBLIC_URL+e.features[0].properties.soundUrl);
                     busStopAudio.play();
 
                     // Ensure that if the map is zoomed out such that multiple
@@ -278,7 +282,7 @@ const Mapload = () => {
                                 map.getSource('point').setData(point1);
                                 map.getSource('currRoute').setData(point1);
                                 audioJourney.pause();
-                                setJourneyStarted(false);
+                                journeyStarted = false;
                                 setDisplayMenu(false);
                                 setBusNo(null);
                             });
@@ -349,7 +353,7 @@ const Mapload = () => {
                                 audioReturnJourney.pause();
                                 map.getSource('point').setData(point1);
                                 map.getSource('currRoute').setData(point1);
-                                setJourneyStarted(false);
+                                journeyStarted = false;
                                 setDisplayMenu(false);
                                 setBusNo(null);
                             });
@@ -390,7 +394,15 @@ const Mapload = () => {
                         });
                     });
                 } else {
-                    //
+                    counter = 0;
+                    cancelAnimationFrame( animationFrameId );
+                    map.getSource('point').setData(point1);
+                    map.getSource('currRoute').setData(point1);
+                    if(audioJourney != null) audioJourney.pause();
+                    if(audioReturnJourney != null) audioReturnJourney.pause();
+                    journeyStarted = false;
+                    setDisplayMenu(false);
+                    setBusNo(null);
                 }
             });
         });

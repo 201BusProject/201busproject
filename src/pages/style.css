@@ -116,28 +116,36 @@
     padding-bottom: 70px;
 }
 
-.icon-bra-ails {
+/* .icon-bra-ails {
     padding-bottom: 30px;
-}
+} */
 
 .icon-ails {
     color: #3F3D56 !important;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .footer {
     color: white;
     font-size: 12px;
+    margin-left: 70px;
     text-align: center;
     background-color: #060b26;
     /* padding-top: 25px; */
     color: white;
     position: absolute;
     bottom: 0;
-    height: 70px;
+    height: 60px;
     width: 100%;
 }
 
+.soundcloud-button{
+    margin: auto;
+}
 .author {
     text-decoration: none !important;
+}
+
+.a {
+    text-decoration: none;
 }

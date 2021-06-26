@@ -9,8 +9,8 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Contact',
-    path: '/about',
+    title: 'About',
+    path: '/201busproject',
     icon: <FaIcons.FaEnvelope />,
     cName: 'nav-text'
   }

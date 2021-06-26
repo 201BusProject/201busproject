@@ -11,8 +11,8 @@ function App() {
       <Router basename = "/">
             <SideNavbar />
             <Switch>
-                <Route path='/201busproject' component={withRouter(Mapload)} />
-                <Route path='/about' component={withRouter(About)} />
+                <Route path='/map' component={withRouter(Mapload)} />
+                <Route path='/201busproject' component={withRouter(About)} />
                 <Route path='/music' component={withRouter(Music)} />
             </Switch>
         </Router>
