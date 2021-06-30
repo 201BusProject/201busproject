@@ -65,18 +65,23 @@
       padding: 7rem;
     }
   }
+  .sound-container{
+    /* background: #060b26; */
+    margin-left: 20vh;
+  }
   
   .features-icons {
-    padding-top: 7rem;
+    /* padding-top: 2rem; */
     padding-bottom: 7rem;
   }
   
   .features-icons .features-icons-item {
     max-width: 20rem;
+    padding-left: 4rem;
   }
   
   .features-icons .features-icons-item .features-icons-icon {
-    height: 7rem;
+    height: 6rem;
   }
   
   .features-icons .features-icons-item .features-icons-icon i {

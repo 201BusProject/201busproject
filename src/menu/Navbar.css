@@ -13,7 +13,14 @@
     margin-left: 10px;
   }
   .map-menu-item{
-    height: 50px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 8px;
+    list-style: none;
+    height: 60px;
+    /* height: 50px; */
     width: 50px;
   }
   .menu-bars {
@@ -56,7 +63,7 @@
   }
   
   .nav-text a:hover {
-    background-color: #1a83ff;
+    background-color: #2077ce;
   }
   
   .nav-menu-items {

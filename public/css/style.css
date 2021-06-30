@@ -58,8 +58,14 @@
     font-weight: bolder;
 }
 
-.content {
-    /* background-image: url('https://drive.google.com/uc?id=16RFCWBG3lqp7S-fnHqvcp6Ax-dtRK0sd'); */
+.about {
+    /* margin-left: 20vh; */
+    background-image: url('../assets/about-page-img-2.png');
+    background-size: 100%;
+}
+
+.content{
+    margin-left: 20vh;
 }
 
 .talk {
@@ -73,7 +79,6 @@
 }
 
 .showcase-img {
-    background-image: url('../201M-8.jpg');
     background-color: #F4F5FF;
     background-position: center;
     background-repeat: no-repeat;
@@ -113,25 +118,52 @@
     padding-bottom: 70px;
 }
 
-.icon-bra-ails {
+/* .icon-bra-ails {
     padding-bottom: 30px;
-}
+} */
 
 .icon-ails {
     color: #3F3D56 !important;
-    font-size: 40px;
+    font-size: 20px;
 }
 
+.sound-page-button{ 
+    font-size: 70px;
+}
+
+.soundpage-btn-a{
+    text-decoration: none !important;
+    color: #2077ce;
+}
+.soundcloud-button{
+    padding-top: 10vh;
+}
 .footer {
     color: white;
     text-align: center;
     background-color: #060b26;
     /* padding-top: 25px; */
-    color: white;
-    position: absolute;
+    /* color: white; */
+    /* position: absolute; */
     bottom: 0;
-    height: 40px;
+    height: 10px;
     width: 100%;
+}
+.map-footer{
+    color: white;
+    text-align: center;
+    background-color: #060b26;
+    /* padding-top: 25px; */
+    /* color: white; */
+    /* position: absolute; */
+    bottom: 0;
+    height: 10px;
+    width: 100%;
+    z-index:20;
+}
+
+.map-footer-text{
+    margin-left: 20vh;
 }
 
 .author {

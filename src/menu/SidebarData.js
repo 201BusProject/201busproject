@@ -8,15 +8,9 @@ export const SidebarData = [
     icon: <FaIcons.FaMusic />,
     cName: 'nav-text'
   },
-  // {
-  //   title: 'Routes',
-  //   path: '/routes',
-  //   icon: <FaIcons.FaRoute />,
-  //   cName: 'nav-text'
-  // },
   {
-    title: 'Contact',
-    path: '/about',
+    title: 'About',
+    path: '/201busproject',
     icon: <FaIcons.FaEnvelope />,
     cName: 'nav-text'
   }

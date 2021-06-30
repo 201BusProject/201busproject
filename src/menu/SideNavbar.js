@@ -13,15 +13,10 @@ function SideNavbar() {
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar'>
-          <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
-        </div>
         <nav className='nav-menu'>
           <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
-              <Link to='/201busproject' className='menu-bars'>
+            <li className='nav-text'>
+              <Link to='/map'>
                 <FaIcons.FaBus />
               </Link>
             </li>
