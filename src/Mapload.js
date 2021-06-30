@@ -234,7 +234,7 @@ const Mapload = () => {
                     audioJourney = new Audio(process.env.PUBLIC_URL+e.features[0].properties.journeySoundUrl);
                     audioReturnJourney =  new Audio(process.env.PUBLIC_URL+e.features[0].properties.journeyReturnUrl)
                     busStopAudio = new Audio(process.env.PUBLIC_URL+e.features[0].properties.soundUrl);
-                    busStopAudio.play();
+                    var busStopAudioPlayPromise = busStopAudio.play();
 
                     // Ensure that if the map is zoomed out such that multiple
                     // copies of the feature are visible, the popup appears
@@ -248,9 +248,15 @@ const Mapload = () => {
                         .addTo(map);
                     
                     popup.on('close', function(e) {
-                        busStopAudio.pause();
+                      if (busStopAudioPlayPromise !== undefined) {
+                        busStopAudioPlayPromise
+                          .then(_ => {
+                            busStopAudio.pause();
+                          })
+                      }
                     })
-  
+                    var audioJourneyPlayPromise = undefined;
+                    var audioReturnJourneyPlayPromise = undefined;
                     document.getElementById('startjourney-'+busNo).addEventListener('click', () => {
                         map.getSource('currRoute').setData(point1);
                         popup.remove();
@@ -281,7 +287,13 @@ const Mapload = () => {
                                 cancelAnimationFrame( animationFrameId );
                                 map.getSource('point').setData(point1);
                                 map.getSource('currRoute').setData(point1);
-                                audioJourney.pause();
+
+                                if (audioJourneyPlayPromise !== undefined) {
+                                  audioJourneyPlayPromise
+                                    .then(_ => {
+                                      audioJourney.pause();
+                                    })
+                                }
                                 journeyStarted = false;
                                 setDisplayMenu(false);
                                 setBusNo(null);
@@ -311,8 +323,13 @@ const Mapload = () => {
                                  }
                                 routeGeoJsonData.features[0].geometry.coordinates = arc;
     
-                                busStopAudio.pause();
-                                audioJourney.play();
+                                if (busStopAudioPlayPromise !== undefined) {
+                                  busStopAudioPlayPromise
+                                    .then(_ => {
+                                      busStopAudio.pause();
+                                    })
+                                }
+                                audioJourneyPlayPromise = audioJourney.play();
                                 setTimeout(() => animate(routeGeoJsonData), 4000);
         
                                 setDisplayMenu(true);
@@ -350,7 +367,12 @@ const Mapload = () => {
                                 //     speed: 0.5,
                                 // });
                                 cancelAnimationFrame( animationFrameId );
-                                audioReturnJourney.pause();
+                                if (audioReturnJourneyPlayPromise !== undefined) {
+                                  audioJourneyPlayPromise
+                                    .then(_ => {
+                                      audioReturnJourney.pause();
+                                    })
+                                }
                                 map.getSource('point').setData(point1);
                                 map.getSource('currRoute').setData(point1);
                                 journeyStarted = false;
@@ -383,8 +405,15 @@ const Mapload = () => {
                              }
                             routeGeoJsonData.features[0].geometry.coordinates = arc;
 
-                            busStopAudio.pause();
-                            audioReturnJourney.play();
+                            
+                            if (busStopAudioPlayPromise !== undefined) {
+                              busStopAudioPlayPromise
+                                .then(_ => {
+                                  busStopAudio.pause();
+                                })
+                            }
+
+                            var audioReturnJourneyPlayPromise = audioReturnJourney.play();
                             setTimeout(() => animate(routeGeoJsonData), 4000);
     
                             setDisplayMenu(true);
