@@ -266,13 +266,11 @@ const Mapload = () => {
                         // audioJourney.addEventListener('loadeddata', (event) =>  {
                             document.getElementById('mute-button').addEventListener('click', () => {
                                 if(!mute){
-                                    console.log(mute);
                                     audioJourney.volume = 0;
                                     mute = true;
-                                    console.log(mute);
                                 } else {
-                                    console.log(mute);
                                     audioJourney.volume = 1.0;
+                                    mute = false;
                                 }
                             });
 
