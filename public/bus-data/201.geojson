@@ -1,0 +1,1328 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+		  [
+            77.5541853904724,
+            12.94452555160944
+          ],
+          [
+            77.5541639328003,
+            12.944170040945936
+          ],
+          [
+            77.55472183227539,
+            12.944232778158682
+          ],
+          [
+            77.555193901062,
+            12.941890578174553
+          ],
+          [
+            77.55442142486572,
+            12.941932403367222
+          ],
+          [
+            77.55364894866943,
+            12.941932403367222
+          ],
+          [
+            77.55367040634155,
+            12.941890578174553
+          ],
+          [
+            77.55324125289917,
+            12.938607278658088
+          ],
+          [
+            77.5514817237854,
+            12.939151012774925
+          ],
+          [
+            77.54985094070435,
+            12.93802171751419
+          ],
+          [
+            77.54510879516602,
+            12.932563385009965
+          ],
+          [
+            77.54257678985596,
+            12.933420832122296
+          ],
+          [
+            77.54510879516602,
+            12.932437904697586
+          ],
+          [
+            77.54337072372437,
+            12.93051386533952
+          ],
+          [
+            77.54540920257568,
+            12.928715293394559
+          ],
+          [
+            77.54995822906494,
+            12.925348164562141
+          ],
+          [
+            77.55126714706421,
+            12.927669606072955
+          ],
+          [
+            77.55169630050659,
+            12.928213364026918
+          ],
+          [
+            77.55221128463744,
+            12.929886457993632
+          ],
+          [
+            77.5529408454895,
+            12.93024198901663
+          ],
+          [
+            77.55455017089844,
+            12.931036703589506
+          ],
+          [
+            77.55620241165161,
+            12.930430211117871
+          ],
+          [
+            77.55620241165161,
+            12.92999102599414
+          ],
+          [
+            77.55671739578247,
+            12.930032853182073
+          ],
+          [
+            77.55721092224121,
+            12.92875712079629
+          ],
+          [
+            77.5574254989624,
+            12.92888260295946
+          ],
+          [
+            77.55751132965088,
+            12.928317932728406
+          ],
+          [
+            77.5580906867981,
+            12.928485242559685
+          ],
+          [
+            77.558434009552,
+            12.92605923903012
+          ],
+          [
+            77.55972146987915,
+            12.926205636463282
+          ],
+          [
+            77.5597858428955,
+            12.925682788093471
+          ],
+          [
+            77.56083726882935,
+            12.925745529955678
+          ],
+          [
+            77.5609016418457,
+            12.925745529955678
+          ],
+          [
+            77.56023645401001,
+            12.921876418961235
+          ],
+          [
+            77.56154537200928,
+            12.921604533231536
+          ],
+          [
+            77.56203889846802,
+            12.920579730512976
+          ],
+          [
+            77.5630259513855,
+            12.919722239292675
+          ],
+          [
+            77.56433486938477,
+            12.918279137666238
+          ],
+          [
+            77.56478548049927,
+            12.91683602770293
+          ],
+          [
+            77.56605148315428,
+            12.916104012216014
+          ],
+          [
+            77.56624460220337,
+            12.916919686479146
+          ],
+          [
+            77.56641626358032,
+            12.916940601168825
+          ],
+          [
+            77.56656646728516,
+            12.917442553195833
+          ],
+          [
+            77.56656646728516,
+            12.917400723898771
+          ],
+          [
+            77.56736040115355,
+            12.91717066263973
+          ],
+          [
+            77.56710290908813,
+            12.916773283602375
+          ],
+          [
+            77.56721019744873,
+            12.916145841730179
+          ],
+          [
+            77.56641626358032,
+            12.914054357443035
+          ],
+          [
+            77.56718873977661,
+            12.913845208051479
+          ],
+          [
+            77.569420337677,
+            12.915518398282273
+          ],
+          [
+            77.57002115249634,
+            12.915643887097904
+          ],
+          [
+            77.57034301757812,
+            12.916250415484985
+          ],
+          [
+            77.57296085357666,
+            12.916794198304308
+          ],
+          [
+            77.57377624511719,
+            12.917128833297136
+          ],
+          [
+            77.5740122795105,
+            12.91769352883113
+          ],
+          [
+            77.57686614990234,
+            12.91752621176895
+          ],
+          [
+            77.57789611816406,
+            12.917275235965555
+          ],
+          [
+            77.5802993774414,
+            12.917233406640467
+          ],
+          [
+            77.58368968963623,
+            12.917149747969312
+          ],
+          [
+            77.58364677429199,
+            12.921667276118518
+          ],
+          [
+            77.59203672409058,
+            12.921667276118518
+          ],
+          [
+            77.59201526641844,
+            12.920600644896192
+          ],
+          [
+            77.58954763412476,
+            12.92068430241161
+          ],
+          [
+            77.5894832611084,
+            12.916982430542932
+          ],
+          [
+            77.59158611297607,
+            12.916856942399608
+          ],
+          [
+            77.59154319763184,
+            12.91434716629712
+          ],
+          [
+            77.59308815002441,
+            12.914911868118192
+          ],
+          [
+            77.5950837135315,
+            12.914932782975958
+          ],
+          [
+            77.59504079818726,
+            12.916752368898688
+          ],
+          [
+            77.59926795959473,
+            12.91671053948607
+          ],
+          [
+            77.6060700416565,
+            12.916647795354002
+          ],
+          [
+            77.60609149932861,
+            12.915790290636496
+          ],
+          [
+            77.60740041732788,
+            12.91591577931558
+          ],
+          [
+            77.60740041732788,
+            12.916626880639807
+          ],
+          [
+            77.61010408401488,
+            12.916438648133303
+          ],
+          [
+            77.61001825332642,
+            12.917421638548173
+          ],
+          [
+            77.61029720306396,
+            12.91648047759144
+          ],
+          [
+            77.61445999145508,
+            12.916438648133303
+          ],
+          [
+            77.61422395706177,
+            12.913949782769139
+          ],
+          [
+            77.61463165283203,
+            12.913845208051479
+          ],
+          [
+            77.61478185653687,
+            12.916354989196
+          ],
+          [
+            77.61926651000977,
+            12.91627133023068
+          ],
+          [
+            77.62265682220459,
+            12.917337979940044
+          ],
+          [
+            77.62066125869751,
+            12.920433329781327
+          ],
+          [
+            77.61810779571533,
+            12.924616174023711
+          ],
+          [
+            77.62001752853394,
+            12.925452734463855
+          ],
+          [
+            77.6227855682373,
+            12.932124203640559
+          ],
+          [
+            77.62405157089233,
+            12.93496841213425
+          ],
+          [
+            77.62690544128418,
+            12.93739432904871
+          ],
+          [
+            77.62467384338379,
+            12.940740382626602
+          ],
+          [
+            77.61857986450195,
+            12.946093974954438
+          ],
+          [
+            77.62141227722168,
+            12.951865687866821
+          ],
+          [
+            77.62003898620605,
+            12.952576686729824
+          ],
+          [
+            77.62055397033691,
+            12.954207794100693
+          ],
+          [
+            77.6200819015503,
+            12.95232574618635
+          ],
+          [
+            77.61754989624023,
+            12.95370591604723
+          ],
+          [
+            77.61733531951903,
+            12.95562977642715
+          ],
+          [
+            77.6167345046997,
+            12.95705175063485
+          ],
+          [
+            77.61656284332275,
+            12.959142874425165
+          ],
+          [
+            77.6145887374878,
+            12.959268341294141
+          ],
+          [
+            77.6147174835205,
+            12.961694021666181
+          ],
+          [
+            77.61248588562012,
+            12.961694021666181
+          ],
+          [
+            77.60991096496582,
+            12.965165212807795
+          ],
+          [
+            77.61132717132568,
+            12.967088984637462
+          ],
+          [
+            77.61029720306396,
+            12.969807332517624
+          ],
+          [
+            77.61046886444092,
+            12.971814708809388
+          ],
+          [
+            77.61098384857178,
+            12.974282086640057
+          ],
+          [
+            77.61415958404541,
+            12.973696609369918
+          ],
+          [
+            77.61297941207886,
+            12.973822068900985
+          ],
+          [
+            77.61203527450562,
+            12.969702781225283
+          ],
+          [
+            77.61272192001341,
+            12.968950010623386
+          ],
+          [
+            77.61433124542236,
+            12.96848998302317
+          ],
+          [
+            77.61960983276367,
+            12.971584697764373
+          ],
+          [
+            77.61954545974731,
+            12.972379280472673
+          ],
+          [
+            77.6200819015503,
+            12.972985670831745
+          ],
+          [
+            77.62003898620605,
+            12.975055750918575
+          ],
+          [
+            77.62029647827147,
+            12.977397638928176
+          ],
+          [
+            77.6204252243042,
+            12.978589484177583
+          ],
+          [
+            77.62166976928711,
+            12.97936313505309
+          ],
+          [
+            77.62261390686035,
+            12.981349524921757
+          ],
+          [
+            77.62516736984253,
+            12.982060439543622
+          ],
+          [
+            77.62651920318604,
+            12.982102257987473
+          ],
+          [
+            77.62855768203735,
+            12.981788619487148
+          ],
+          [
+            77.62911558151245,
+            12.979049493096454
+          ],
+          [
+            77.62877225875854,
+            12.978589484177583
+          ],
+          [
+            77.63089656829834,
+            12.978443117524888
+          ],
+          [
+            77.63117551803589,
+            12.979676776613998
+          ],
+          [
+            77.6309609413147,
+            12.97833856986306
+          ],
+          [
+            77.6410460472107,
+            12.978380388933074
+          ],
+          [
+            77.64162540435791,
+            12.963345980114099
+          ],
+          [
+            77.63887882232666,
+            12.96478882092771
+          ],
+          [
+            77.63759136199951,
+            12.962321348950205
+          ],
+          [
+            77.63823509216309,
+            12.961631288850846
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Srinagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.55438349002168,
+          12.944353231915331,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Apex Bank,Srinagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.55553022978432,
+          12.941765605779032,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bank Colony",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.55303743912627,
+          12.938560745340665,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Seetha Circle",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5497571,
+          12.9379855,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hosakerehalli Cross Road",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5430963,
+          12.9332383,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hosakerehalli Cross Bus Stand",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5436755,
+          12.9304361,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Janatha Bazaar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5453446,
+          12.9287405,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kathriguppe",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5569463,
+          12.9293747,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Devegowda Petrol Bunk",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5605109,
+          12.9219112,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kadirenahalli Cross",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5667739,
+          12.913906,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Yarab Nagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.56702,
+          12.9171387,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Banashankari TTMC",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5729587,
+          12.9171471,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sangam Circle",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5777913,
+          12.9174458,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "5th Block,Jayanagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5841498,
+          12.9208325,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ragigudda Sri Prasanna Anjaneyaswamy Temple",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5929978,
+          12.9148756,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jayanagara 9th Block East End",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5920314,
+          12.9206066,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jayadeva Hospital",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5992972,
+          12.9166753,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BTM Water Tank",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6070335,
+          12.9158854,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Udupi Garden Bus Stop",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6100868,
+          12.917171,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kuvempu Nagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6145766,
+          12.9141965,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Madiwala Police Station",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6206412,
+          12.9203064,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Madiwala Ayyappa Temple Bus Stop",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6178904,
+          12.9247144,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kendriya Sadan",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6205734,
+          12.9256,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Koramangala BDA Complex",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6227526,
+          12.9321735,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canara Bank Koramangala",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6241668,
+          12.9350605,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Koramangala Bus Depot",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6246549,
+          12.9407622,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Regional Passport Office",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6188727,
+          12.9456667,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "National Games Village",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6199336,
+          12.9486734,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Viveka Nagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6190083,
+          12.9545044,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vannarpet Layout",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6204891,
+          12.9537823,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Austin Town",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6159944,
+          12.9587475,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "St. Philomena's Hospital",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6109044,
+          12.9653713,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mayo Hall",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6105446,
+          12.9717673,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Electric B Station",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.613956,
+          12.9739386,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trinity Circle",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6196572,
+          12.9710782,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Begum Mahal",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6200969,
+          12.9750232,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lido Mall",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6200544,
+          12.9734629,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Halasuru",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6284174,
+          12.9817167,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lakshmipura",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.631196,
+          12.9796156,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "100 Feet Road",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6411006,
+          12.9745791,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KFC,Indiranagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.640798,
+          12.97819,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "6th Main,Indiranagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.64119285827546,
+          12.974057078191514,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "New Horizon School",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.64129779046661,
+          12.966691892553452,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Domlur Bridge",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.63826152987546,
+          12.963685987743228,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Doopanahalli,Domlur",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.64180519352317,
+          12.963213744517653,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ambedkar Terminal, Domlur",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.63849480969729,
+          12.961627168992925,
+          0
+        ]
+      }
+    }
+  ]
+}
