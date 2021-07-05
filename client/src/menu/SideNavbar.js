@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
  
-function SideNavbar() {
+function SideNavbar(props) {
   const [sidebar, setSidebar] = useState(false);
- 
+  const { onClick } = props; 
   const showSidebar = () => setSidebar(!sidebar);
  
   return (
@@ -16,19 +14,14 @@ function SideNavbar() {
         <nav className='nav-menu'>
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='nav-text'>
-              <Link to='/map'>
-                <FaIcons.FaBus />
-              </Link>
+              <FaIcons.FaBus onClick={() => onClick('map')}/>
             </li>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                  </Link>
-                </li>
-              );
-            })}
+            <li className='nav-text'>
+              <FaIcons.FaMusic onClick={() => onClick('music')} />
+            </li>
+            <li className='nav-text'>
+              <FaIcons.FaEnvelope onClick={() => onClick('about')} />
+            </li>
             <div className = "map-menu">
               <li className = "map-menu-item">
                 <FaIcons.FaVolumeMute id="mute-button"/>

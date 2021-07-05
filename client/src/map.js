@@ -3,7 +3,7 @@ import "./css/Mapload.css";
 import "./css/Modal.css";
 import AnecdoteModal from "./AnecdoteModal";
 import * as turf from "@turf/turf";
-import mapboxgl from "mapbox-gl";
+import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import { ZoomControl } from "mapbox-gl-controls";
 import buslayout from "./utils/buslayout";
 
