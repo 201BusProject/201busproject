@@ -4,6 +4,7 @@ import SideNavbar from "./menu/SideNavbar";
 import Music from "./pages/Music";
 import About from "./pages/About";
 import React, { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const [component, setComponent] = useState("map");
@@ -20,7 +21,9 @@ function App() {
 
   return (
     <div className="App">
-      <SideNavbar onClick={handleSidebarClick} />
+      <Router basename="/">
+        <SideNavbar onClick={handleSidebarClick} />
+      </Router>
       {appComponents[component]}
     </div>
   );

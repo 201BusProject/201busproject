@@ -73,11 +73,30 @@ def route(a, b, k):
 for k, v in busDict.items() : 
     condensedBusDict[k] = list(filter(lambda x : x in busStops, v))
 
+count = 0
 for k, v in condensedBusDict.items() :
     for a, b in zip(v, v[1:]) :
-        connectivityGraph.add_edge(a, b, bus=k, route=route(a, b, k))
-        connectivityGraph.add_edge(b, a, bus=k, route=route(b, a, k))
-
+        f1 = f'../audio/edges/{k}/{a}-{b}/audio.mp3'
+        f2 = f'../audio/edges/{k}/{b}-{a}/audio.mp3'
+        print(k, a, b, osp.exists(f1), osp.exists(f2))
+        count += osp.exists(f1)
+        count += osp.exists(f2)
+        connectivityGraph.add_edge(
+            a, 
+            b, 
+            bus=k, 
+            route=route(a, b, k),
+            audio=osp.exists(f1)
+        )
+        connectivityGraph.add_edge(
+            b, 
+            a, 
+            bus=k, 
+            route=route(b, a, k),
+            audio=osp.exists(f2)
+        )
+    
+print(count)
 
 finalData = nx.node_link_data(connectivityGraph) 
 with open('connectivity.json', 'w+') as fd : 

@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import "./css/Mapload.css";
 import "./css/Modal.css";
 import AnecdoteModal from "./AnecdoteModal";
-import * as turf from "@turf/turf";
-import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import { ZoomControl } from "mapbox-gl-controls";
-import buslayout from "./utils/buslayout";
+import graph from "./data/connectivity";
+import Node from "./node";
+import Segment from "./segment";
+import { randomRoute } from "./utils/graphOps";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoicHJhbm1hbjExMTAiLCJhIjoiY2trdmg3dDNqMjBidTJ1czFjZnJhdXczbCJ9.iiySDdrwpE0p-hFUAKtU7Q";
@@ -17,13 +19,47 @@ class Map extends Component {
       busNo: undefined,
       latLng: [77.5985, 12.9433],
       zoom: 12.5,
-      displayMenu: false
+      displayMenu: false,
+      graph: graph
     };
     this.mapContainerRef = React.createRef();
+    this.source = undefined;
+    this.canHandleNodes = true;
   }
 
+  handleNodeClick = node => {
+    if (this.canHandleNodes) {
+      const { graph } = this.state;
+      if (typeof this.source === "undefined") {
+        this.source = node.id;
+      } else {
+        this.target = node.id;
+        // Get a sequence of links from source to target.
+        const links = randomRoute(graph, {
+          source: this.source,
+          target: this.target
+        });
+        // chain them.
+        if (links.length > 0) {
+          this.canHandleNodes = false;
+          const segments = links.map(
+            link => new Segment({ map: this.map, link })
+          );
+          segments.slice(0, segments.length - 1).map((seg, i) => {
+            return seg.onEnd(() => segments[i + 1].beginAnimate());
+          });
+          segments[segments.length - 1].onEnd(
+            () => (this.canHandleNodes = true)
+          );
+          segments[0].beginAnimate();
+        }
+        this.source = undefined;
+      }
+    }
+  };
+
   componentDidMount() {
-    const { latLng, zoom } = this.state;
+    const { latLng, zoom, graph } = this.state;
     this.map = new mapboxgl.Map({
       container: this.mapContainerRef.current,
       style: "mapbox://styles/mapbox/streets-v11",
@@ -43,21 +79,14 @@ class Map extends Component {
     });
 
     this.map.on("load", () => {
-      this.map.addSource("busStops", {
-        type: "geojson",
-        data: "/bus-data/busStops.geojson"
-      });
-
-      this.map.addLayer({
-        id: "busStops",
-        source: "busStops",
-        type: "symbol",
-        layout: {
-          "icon-size": 2.5,
-          ...buslayout
-        }
-      });
-
+      this.nodes = graph.nodes.map(
+        node =>
+          new Node({
+            map: this.map,
+            node: node,
+            onClick: () => this.handleNodeClick(node)
+          })
+      );
     });
   }
 
