@@ -535,7 +535,7 @@ const graph = {
           [77.62235641479492, 12.918320966816218]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Banashankari TTMC",
       target: "Silk Board",
       key: 0
@@ -584,7 +584,7 @@ const graph = {
           [77.62231349945068, 12.91815365017429]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Banashankari TTMC",
       target: "Silk Board",
       key: 1
@@ -1116,7 +1116,7 @@ const graph = {
           [77.63420104980469, 12.925264508609228]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Madiwala Police Station",
       target: "Koramangala",
       key: 0
@@ -1130,7 +1130,7 @@ const graph = {
           [77.62235641479492, 12.918320966816218]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Madiwala Police Station",
       target: "Silk Board",
       key: 0
@@ -1145,7 +1145,7 @@ const graph = {
           [77.62231349945068, 12.91815365017429]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Madiwala Police Station",
       target: "Silk Board",
       key: 1
@@ -1159,7 +1159,7 @@ const graph = {
           [77.62224912643431, 12.918132735586159]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Madiwala Police Station",
       target: "Silk Board",
       key: 2
@@ -1329,7 +1329,7 @@ const graph = {
           [77.65468239784241, 12.966827603468463]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Madiwala Police Station",
       target: "Jeevan Bhima Nagar Depot",
       key: 2
@@ -1586,7 +1586,7 @@ const graph = {
           [77.62033939361572, 12.92118624691555]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Jeevan Bhima Nagar Depot",
       target: "Madiwala Police Station",
       key: 2
@@ -1862,7 +1862,7 @@ const graph = {
           [77.62021064758301, 12.921081675227088]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Silk Board",
       target: "Madiwala Police Station",
       key: 0
@@ -1877,7 +1877,7 @@ const graph = {
           [77.62033939361572, 12.92118624691555]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Silk Board",
       target: "Madiwala Police Station",
       key: 1
@@ -1891,7 +1891,7 @@ const graph = {
           [77.62033939361572, 12.92118624691555]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Silk Board",
       target: "Madiwala Police Station",
       key: 2
@@ -1943,7 +1943,7 @@ const graph = {
           [77.57308959960938, 12.917400723898771]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Silk Board",
       target: "Banashankari TTMC",
       key: 0
@@ -1992,7 +1992,7 @@ const graph = {
           [77.57396936416626, 12.917609870314054]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Silk Board",
       target: "Banashankari TTMC",
       key: 1
@@ -2105,7 +2105,7 @@ const graph = {
           [77.62021064758301, 12.921081675227088]
         ]
       },
-      audio: false,
+      audio: true,
       source: "Koramangala",
       target: "Madiwala Police Station",
       key: 0

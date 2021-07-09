@@ -5,8 +5,8 @@ import Slider from "react-slick";
 
 function AnecdoteModal(props) {
   var imagesUrl = [0];
-  if (props.busNo != null && ImagesMap.get(props.busNo)) {
-    imagesUrl = ImagesMap.get(props.busNo);
+  if (props.bus != null && ImagesMap.get(props.bus)) {
+    imagesUrl = ImagesMap.get(props.bus);
     var settings = {
       arrows: true,
       centreMode: true,

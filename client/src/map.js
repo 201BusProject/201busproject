@@ -16,10 +16,9 @@ class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      busNo: undefined,
+      bus: undefined,
       latLng: [77.5985, 12.9433],
       zoom: 12.5,
-      displayMenu: false,
       graph: graph
     };
     this.mapContainerRef = React.createRef();
@@ -50,6 +49,9 @@ class Map extends Component {
           });
           segments[segments.length - 1].onEnd(
             () => (this.canHandleNodes = true)
+          );
+          segments.map(seg =>
+            seg.onBegin(() => this.setState({ bus: seg.link.bus }))
           );
           segments[0].beginAnimate();
         }
@@ -91,12 +93,12 @@ class Map extends Component {
   }
 
   render() {
-    const { busNo, displayMenu } = this.state;
+    const { bus } = this.state;
     return (
       <div>
-        {displayMenu && (
+        {bus && (
           <div className="anecdote-modal Show">
-            <AnecdoteModal busNo={busNo} />
+            <AnecdoteModal bus={bus} />
           </div>
         )}
         <div className="map-container" ref={this.mapContainerRef} />

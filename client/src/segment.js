@@ -1,5 +1,5 @@
 /*
- * @file Component represents a segment between adjacent bus stops
+ * @file A segment between adjacent bus stops
  *
  * @author Sumit Chaturvedi
  */
@@ -17,18 +17,24 @@ class Segment {
     this.routeId = `route-${source}-${target}-${bus}`;
     const url = `/audio/edges/${bus}/${source}-${target}/audio.mp3`;
     this.audio = new Audio(url);
+    this.beginFn = () => {};
+    this.endFn = () => {};
   }
 
   onEnd = fn => {
     this.endFn = fn;
   };
 
+  onBegin = fn => {
+    this.beginFn = fn;
+  };
+
   updateAnimation = () => {
     const { duration, currentTime, ended } = this.audio;
     if (ended) {
       cancelAnimationFrame(this.rAF);
-      this.removeSourceAndLayer();
-      if (typeof this.endFn !== "undefined") this.endFn();
+      this._removeSourceAndLayer();
+      this.endFn();
       return;
     }
     const { route } = this.link;
@@ -55,14 +61,15 @@ class Segment {
       this.audio.currentTime = 0;
       this.posId = 0;
       this.audioPromise = this.audio.play();
-      this.addSourceAndLayer();
+      this._addSourceAndLayer();
       this.audioPromise.then(() => {
         this.rAF = requestAnimationFrame(this.updateAnimation);
       });
+      this.beginFn();
     }
   };
 
-  addSourceAndLayer = () => {
+  _addSourceAndLayer = () => {
     this.map.addSource(this.busId, {
       type: "geojson",
       data: featuredGeometry()
@@ -102,7 +109,7 @@ class Segment {
     });
   };
 
-  removeSourceAndLayer = () => {
+  _removeSourceAndLayer = () => {
     this.map.removeLayer(this.busId);
     this.map.removeLayer(this.routeId);
     this.map.removeSource(this.busId);

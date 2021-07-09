@@ -15,18 +15,18 @@ function SideNavbar(props) {
         <nav className="nav-menu">
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="nav-text">
-              <Link to='/' onClick={() => onClick("map")}>
+              <Link to="/" onClick={() => onClick("map")}>
                 <FaIcons.FaBus />
               </Link>
             </li>
             <li className="nav-text">
-              <Link to='/' onClick={() => onClick("music")}>
+              <Link to="/" onClick={() => onClick("music")}>
                 <FaIcons.FaMusic />
               </Link>
             </li>
             <li className="nav-text">
-              <Link to='/' onClick={() => onClick("about")}>
-                <FaIcons.FaEnvelope onClick={() => onClick("about")} />
+              <Link to="/" onClick={() => onClick("about")}>
+                <FaIcons.FaEnvelope />
               </Link>
             </li>
           </ul>
