@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-  const [component, setComponent] = useState("map");
+  const [component, setComponent] = useState("about");
 
   const handleSidebarClick = item => {
     setComponent(item);
@@ -16,7 +16,7 @@ function App() {
   const appComponents = {
     map: <Map />,
     music: <Music />,
-    about: <About />
+    about: <About onClick={handleSidebarClick}/>
   };
 
   return (

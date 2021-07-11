@@ -4,7 +4,7 @@ function Music() {
   return (
     <div className="about">
       {/* <section class="features-icons text-center det-ails"> */}
-      <div class="sound-container features-icons text-left">
+      <div class="sound-container text-left">
         <div class="row">
           <div class="col-lg-6">
             <p className="talk">
@@ -84,6 +84,14 @@ function Music() {
           </div>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       {/* </section> */}

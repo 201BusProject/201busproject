@@ -3,7 +3,9 @@ import "./style.css";
 import "./landing-page.css";
 import { Link } from "react-router-dom";
 
-function Content() {
+function Content(props) {
+  const { onClick } = props;
+
   return (
     <div>
       <div className="content">
@@ -40,9 +42,9 @@ function Content() {
             <br />
             <br />
             <h6>
-              <Link to="/map">
+            <div onClick={() => onClick("map")}>
                 <p className="btn btn-dark start start-two">Catch a 201</p>
-              </Link>
+              </div>
             </h6>
             <br />
             <br />
