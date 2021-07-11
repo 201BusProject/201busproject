@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div class="footer text-center py-3">
       <p>
-        Sound: Recorded by Rukmini Swaminathan
+        Sound recordings: Rukmini Swaminathan
         <br />
         Illustrations: Arun Swaminathan
         <br />

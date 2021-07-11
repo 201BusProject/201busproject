@@ -8,6 +8,9 @@ import graph from "./data/connectivity";
 import Node from "./node";
 import Segment from "./segment";
 import { randomRoute } from "./utils/graphOps";
+import { ToastContainer, toast, cssTransition } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoicHJhbm1hbjExMTAiLCJhIjoiY2trdmg3dDNqMjBidTJ1czFjZnJhdXczbCJ9.iiySDdrwpE0p-hFUAKtU7Q";
@@ -31,8 +34,12 @@ class Map extends Component {
       const { graph } = this.state;
       if (typeof this.source === "undefined") {
         this.source = node.id;
+        toast.dark("Pick a destination!", {
+          autoClose: false,
+        });
       } else {
         this.target = node.id;
+        toast.dismiss();
         // Get a sequence of links from source to target.
         const links = randomRoute(graph, {
           source: this.source,
@@ -102,6 +109,7 @@ class Map extends Component {
           </div>
         )}
         <div className="map-container" ref={this.mapContainerRef} />
+        <ToastContainer/>
       </div>
     );
   }
