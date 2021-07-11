@@ -1,0 +1,595 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.62224912643431,
+            12.918132735586159
+          ],
+          [
+            77.62033939361572,
+            12.92118624691555
+          ],
+          [
+            77.62134790420532,
+            12.921771847561772
+          ],
+          [
+            77.62370824813843,
+            12.923047615643606
+          ],
+          [
+            77.62933015823364,
+            12.924156064586843
+          ],
+          [
+            77.62497425079346,
+            12.925891927572804
+          ],
+          [
+            77.6209831237793,
+            12.927523209498352
+          ],
+          [
+            77.62151956558228,
+            12.928861689269986
+          ],
+          [
+            77.62274265289307,
+            12.93191506938343
+          ],
+          [
+            77.62368679046631,
+            12.93413188359016
+          ],
+          [
+            77.624351978302,
+            12.935177543831987
+          ],
+          [
+            77.62812852859497,
+            12.938000804590772
+          ],
+          [
+            77.6281714439392,
+            12.938032173975236
+          ],
+          [
+            77.6290190219879,
+            12.938419062726052
+          ],
+          [
+            77.63022065162659,
+            12.938471344943643
+          ],
+          [
+            77.6309072971344,
+            12.938460888501005
+          ],
+          [
+            77.63206601142883,
+            12.938481801385848
+          ],
+          [
+            77.63306379318237,
+            12.938460888501005
+          ],
+          [
+            77.63376116752625,
+            12.938439975614406
+          ],
+          [
+            77.63441562652586,
+            12.938534083590284
+          ],
+          [
+            77.63511300086975,
+            12.938847776586755
+          ],
+          [
+            77.63576745986938,
+            12.939266033301573
+          ],
+          [
+            77.63642191886902,
+            12.940050262751134
+          ],
+          [
+            77.63704419136047,
+            12.941012247507677
+          ],
+          [
+            77.63787031173706,
+            12.942350654908067
+          ],
+          [
+            77.63849258422852,
+            12.943417193161341
+          ],
+          [
+            77.63953328132628,
+            12.945058816654038
+          ],
+          [
+            77.6404345035553,
+            12.946564500033434
+          ],
+          [
+            77.64074563980103,
+            12.94701411205675
+          ],
+          [
+            77.64087438583374,
+            12.947965613896558
+          ],
+          [
+            77.64053106307983,
+            12.948498871580883
+          ],
+          [
+            77.63964056968689,
+            12.94926216000609
+          ],
+          [
+            77.63916850090027,
+            12.950056813964617
+          ],
+          [
+            77.63955473899841,
+            12.951144231064056
+          ],
+          [
+            77.64094948768616,
+            12.953507255705054
+          ],
+          [
+            77.64132499694823,
+            12.954312351901212
+          ],
+          [
+            77.64145374298096,
+            12.956236207596913
+          ],
+          [
+            77.64142155647278,
+            12.958149592814406
+          ],
+          [
+            77.64152884483337,
+            12.959508819282918
+          ],
+          [
+            77.64171123504639,
+            12.960857582828337
+          ],
+          [
+            77.64153957366943,
+            12.964705178210396
+          ],
+          [
+            77.64089584350586,
+            12.97691671729737
+          ],
+          [
+            77.64081001281738,
+            12.97846402705198
+          ],
+          [
+            77.64638900756836,
+            12.978673122226148
+          ],
+          [
+            77.64660358428954,
+            12.977836740474286
+          ],
+          [
+            77.64656066894531,
+            12.977167633046893
+          ],
+          [
+            77.6473331451416,
+            12.97081102268838
+          ],
+          [
+            77.64784812927246,
+            12.968970920948633
+          ],
+          [
+            77.64836311340332,
+            12.968855914137988
+          ],
+          [
+            77.64868497848511,
+            12.968803638297397
+          ],
+          [
+            77.64976859092712,
+            12.968625900357223
+          ],
+          [
+            77.65107750892639,
+            12.968270424095923
+          ],
+          [
+            77.65379190444946,
+            12.967810395239184
+          ],
+          [
+            77.6557981967926,
+            12.967549014827998
+          ],
+          [
+            77.65570163726807,
+            12.966702140409817
+          ],
+          [
+            77.65468239784241,
+            12.966827603468463
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jeevan Bhima Nagar Depot",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.65466764565573,
+          12.966826296554425,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Petrol Bunk, Jeevan Bhima Nagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6559404197312,
+          12.967619177400838,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thippasandra (Indiranagar)",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.65384,
+          12.96779,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chinmaya Mission Hospital",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.64658,
+          12.9776,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Police Station,Indiranagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.64099872528855,
+          12.978166990851566,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kfc,Indiranagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.64103,
+          12.97711,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "6th Main,Indiranagar",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.64116,
+          12.97404,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "New Horizon School",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.64125547704765,
+          12.968708109216278,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Doopanahalli",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6417811900146,
+          12.963272760892716,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Domlur Bridge",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6414807826049,
+          12.957947083836592,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hero Honda",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.64122329053947,
+          12.955182027850936,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dell It Complex/Embassy Golf Links Business Park",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.63971052465503,
+          12.9513133630488,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Inner Ring Road Ejipura Junction",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6331536471844,
+          12.938640608547498,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "80ft road Juntcion,Koramangala",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.62802955505867,
+          12.938180524977739,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canara Bank, Koramangala",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6238762627538,
+          12.934175856939715,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BDA Complex, Koramangala",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.62274433937615,
+          12.932154932775065,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Water Tank,Koramangala",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.62152125206532,
+          12.929129606283148,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kuduremukha (CPWD MPLX)",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.62466120371195,
+          12.925871599450355,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Krupanidhi College",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.62932824739799,
+          12.924261220840544,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Madiwala Police Station",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.62141036638583,
+          12.921626033439056,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Silk Board",
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.62244568568444,
+          12.918152766797416,
+          0
+        ]
+      }
+    }
+  ]
+}

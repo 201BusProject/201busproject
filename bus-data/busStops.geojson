@@ -1,0 +1,118 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "Srinagar"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [77.5541853904724, 12.94452555160944]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "Girinagar Phase 2"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [77.54496935449919, 12.940683393363294]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "Banashankari TTMC"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [77.57308959960938, 12.917400723898771]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "Madiwala Police Station"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [77.62055397033691, 12.920496072962548]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"busNo": "201G",
+				"steps": 4000,
+				"name": "Jeevan Bhima Nagar Depot",
+				"icon": "bus"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [77.65466630458832, 12.966806692963083]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "Ambedkar Terminal, Domlur"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [77.63849480969729, 12.961627168992925]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "Hampinagar"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [77.5357961654663, 12.958766473438937]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "Silk Board"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [77.62224912643431, 12.918132735586159]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "Indiranagar Police Station"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [77.64074867442957, 12.978567576258115]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "Koramangala"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [77.63427186168386, 12.924803171952664]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "JHBCS Colony"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [77.56376612028082, 12.912363817792938]
+			}
+		}
+	]
+}
