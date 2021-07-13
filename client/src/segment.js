@@ -104,13 +104,21 @@ class Segment {
       "id": "busNo-"+this.routeId,
       "type": "symbol",
       "source": this.routeId,
+      "maxzoom": 18,
+      "minzoom": 2,
       "layout": {
         "symbol-placement": "line",
         "text-font": ["Open Sans Regular"],
-        "text-field": 'aaaaaaaaaa',
-        "text-size": 16
+        "text-field": this.link.bus,
+        "text-size": 20
+      },
+      "paint": {
+        "text-color": "#202",
+        "text-halo-color": "#fff",
+        "text-halo-width": 2
       }
     });
+    console.log(this.map.getSource(this.routeId));
     this.map.on("click", this.busId, () => {
       if (this.audio.paused) {
         this.restartAnimate();
