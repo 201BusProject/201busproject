@@ -2,13 +2,11 @@ import React from "react";
 
 function Footer() {
   return (
-    <div class="footer text-center py-3">
+    <div class="footer text-center">
       <p>
-        Sound recordings: Rukmini Swaminathan
+        Sound recordings : Rukmini Swaminathan
         <br />
-        Illustrations: Arun Swaminathan
-        <br />
-        Website: Pranav Manglani
+        Illustrations : Arun Swaminathan
       </p>
     </div>
   );

@@ -19,7 +19,7 @@ h4,
 h5,
 h6, 
 p {
-  font-family: 'Lato', 'Roboto', Roboto, Arial, sans-serif;
+  font-family: 'Helvetica', 'Roboto', Roboto, Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -128,7 +128,3 @@ header.masthead h1 {
   opacity: 0.3;
 }
 
-footer.footer {
-  /* padding-top: 4rem; */
-  /* padding-bottom: 4rem; */
-}

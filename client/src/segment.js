@@ -100,6 +100,17 @@ class Segment {
         ...buslayout
       }
     });
+    this.map.addLayer({
+      "id": "busNo-"+this.routeId,
+      "type": "symbol",
+      "source": this.routeId,
+      "layout": {
+        "symbol-placement": "line",
+        "text-font": ["Open Sans Regular"],
+        "text-field": 'aaaaaaaaaa',
+        "text-size": 16
+      }
+    });
     this.map.on("click", this.busId, () => {
       if (this.audio.paused) {
         this.restartAnimate();

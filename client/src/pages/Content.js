@@ -14,6 +14,7 @@ function Content(props) {
             <h1>201 BUS PROJECT</h1>
             <br />
             <br />
+            <br />
             <h6 className="bold-four">
               Having witnessed the stillness of Bangalore during lockdown in
               2020, the 201 Bus Project began as a means to archive the movement
@@ -46,10 +47,6 @@ function Content(props) {
                 <p className="btn btn-dark start start-two">Catch a 201</p>
               </div>
             </h6>
-            <br />
-            <br />
-            <br />
-            <br />
             <br />
             <br />
             <br />
