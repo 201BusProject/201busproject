@@ -118,7 +118,6 @@ class Segment {
         "text-halo-width": 2
       }
     });
-    console.log(this.map.getSource(this.routeId));
     this.map.on("click", this.busId, () => {
       if (this.audio.paused) {
         this.restartAnimate();
