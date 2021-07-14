@@ -1,12 +1,11 @@
 import React from "react";
+import { range } from "lodash";
 import "./css/AnecdoteModal.css";
-import ImagesMap from "./ImagesData";
 import Slider from "react-slick";
 
 function AnecdoteModal(props) {
-  var imagesUrl = [0];
-  if (props.bus != null && ImagesMap.get(props.bus)) {
-    imagesUrl = ImagesMap.get(props.bus);
+  const { bus } = props;
+  if (props.bus) {
     var settings = {
       arrows: true,
       centreMode: true,
@@ -21,10 +20,10 @@ function AnecdoteModal(props) {
       <div className="group-4">
         <div className="slider">
           <Slider {...settings}>
-            {imagesUrl.map(function(url, i) {
+            {range(1, 9).map(function(id) {
               return (
-                <div className="slide" key={i}>
-                  <img src={url} />
+                <div className="slide" key={id}>
+                  <img src={`/assets/bus-booklets/${bus}/${id}.jpg`} />
                 </div>
               );
             })}
