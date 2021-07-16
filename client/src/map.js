@@ -7,6 +7,7 @@ import { ZoomControl } from "mapbox-gl-controls";
 import graph from "./data/connectivity";
 import Node from "./node";
 import Segment from "./segment";
+import { showRoute, hideRoute } from "./utils/geoOps";
 import { randomRoute } from "./utils/graphOps";
 import { ToastContainer, toast, cssTransition } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,6 +28,7 @@ class Map extends Component {
     this.mapContainerRef = React.createRef();
     this.source = undefined;
     this.canHandleNodes = true;
+    this.beforeId = graph.nodes[0].id;
   }
 
   handleNodeClick = node => {
@@ -45,17 +47,25 @@ class Map extends Component {
           source: this.source,
           target: this.target
         });
+        showRoute(this.map, links, this.beforeId);
         // chain them.
         if (links.length > 0) {
           this.canHandleNodes = false;
           const segments = links.map(
-            link => new Segment({ map: this.map, link })
+            link => new Segment({ map: this.map, link }, this.beforeId)
           );
           segments.slice(0, segments.length - 1).map((seg, i) => {
-            return seg.onEnd(() => segments[i + 1].beginAnimate());
+            return seg.onEnd(() => {
+              this.setState({ bus: undefined });
+              segments[i + 1].beginAnimate();
+            });
           });
           segments[segments.length - 1].onEnd(
-            () => (this.canHandleNodes = true)
+            () => {
+              this.setState({ bus: undefined });
+              this.canHandleNodes = true;
+              hideRoute(this.map, links);
+            }
           );
           segments.map(seg =>
             seg.onBegin(() => this.setState({ bus: seg.link.bus }))

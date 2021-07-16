@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div class="footer text-center">
+    <div className="footer text-center">
       <p>
         Sound recordings : Rukmini Swaminathan
         <br />

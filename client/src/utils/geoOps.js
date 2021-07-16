@@ -7,6 +7,7 @@ import { neighbors, edges } from "./graphOps";
 import { v4 as uuidv4 } from "uuid";
 import { randomSelect } from "./randomOps";
 import { uniq } from "lodash";
+import routeColor from "./colors";
 
 function featuredGeometry(geometry) {
   let base = {
@@ -37,6 +38,43 @@ function interpolate(p1, p2, t) {
 
 function clamp(x, [l, h]) {
   return Math.max(Math.min(x, h), l);
+}
+
+function combinedLinkRoutes(links) {
+  const route = {
+    type: "LineString",
+    coordinates: links.map(l => l.route.coordinates).flat()
+  };
+  return route;
+}
+
+function showRoute(map, links, beforeId) {
+  const route = combinedLinkRoutes(links);
+  map.addSource("route", {
+    type: "geojson",
+    data: featuredGeometry(route)
+  });
+  map.addLayer(
+    {
+      id: "route",
+      type: "line",
+      source: "route",
+      layout: {
+        "line-join": "round",
+        "line-cap": "round"
+      },
+      paint: {
+        "line-color": routeColor,
+        "line-width": 5
+      }
+    },
+    beforeId
+  );
+}
+
+function hideRoute(map, links) {
+  map.removeLayer("route");
+  map.removeSource("route");
 }
 
 class ReachableLayer {
@@ -92,4 +130,11 @@ class ReachableLayer {
     this.sources.map(this.map.removeSource);
   };
 }
-export { featuredGeometry, interpolate, clamp, ReachableLayer };
+export {
+  featuredGeometry,
+  interpolate,
+  clamp,
+  ReachableLayer,
+  showRoute,
+  hideRoute
+};
