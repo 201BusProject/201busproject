@@ -26,7 +26,7 @@ function SideNavbar(props) {
             </li>
             <li className="nav-text">
               <Link to="/" onClick={() => onClick("about")}>
-                <FaIcons.FaEnvelope />
+                <FaIcons.FaHome />
               </Link>
             </li>
           </ul>

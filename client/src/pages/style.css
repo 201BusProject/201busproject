@@ -104,11 +104,15 @@
 }
 
 .start-two {
-    background-color: #2077ce;
+    background-color: black;
     color: white;
     margin-left: 0;
     font-weight: 600;
 }
+.start-two:hover {
+    background-color: #15b8d4;
+}
+
 
 .det-ails {
     margin-top: 50px;
@@ -126,15 +130,14 @@
 }
 
 .footer {
-    color: white;
+    color: black;
     font-size: 10px;
     margin-left: 70px;
     text-align: center;
-    background-color: #060b26;
     padding-top: 10px;
     position: absolute;
     bottom: 0;
-    height: 40px;
+    height: 50px;
     width: 100%;
 }
 

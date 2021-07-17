@@ -60,7 +60,7 @@
 
 .about {
     /* margin-left: 20vh; */
-    background-image: url('../assets/about-page-img.png');
+    /* background-image: url('../assets/about-page-img.png'); */
     background-size: 100%;
 }
 
@@ -106,10 +106,13 @@
 }
 
 .start-two {
-    background-color: #2613d1;
+    background-color: black;
     color: white;
     margin-left: 0;
     font-weight: 600;
+}
+.start-two:hover {
+    background-color: #15b8d4;
 }
 
 .det-ails {
@@ -133,15 +136,14 @@
 
 .soundpage-btn-a{
     text-decoration: none !important;
-    color: #2077ce;
+    color: #15b8d4;
 }
 .soundcloud-button{
     padding-top: 10vh;
 }
 .footer {
-    color: white;
+    color: black;
     text-align: center;
-    background-color: #060b26;
     /* padding-top: 25px; */
     /* color: white; */
     /* position: absolute; */

@@ -22,7 +22,7 @@ class Map extends Component {
     this.state = {
       bus: undefined,
       latLng: [77.5985, 12.9433],
-      zoom: 12.5,
+      zoom: 12.3,
       graph: graph
     };
     this.mapContainerRef = React.createRef();
@@ -36,7 +36,7 @@ class Map extends Component {
       const { graph } = this.state;
       if (typeof this.source === "undefined") {
         this.source = node.id;
-        toast.dark("Pick a destination!", {
+        toast.dark("Pick another Bus Stop as destination!", {
           autoClose: false,
         });
       } else {

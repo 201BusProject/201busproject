@@ -15,7 +15,13 @@ h4,
 h5,
 h6 {
 	font-family: "Helvetica", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 700;
+	font-weight: 500;
+}
+
+.names{
+	font-family: "Helvetica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 200;
+	font-size: 0.75rem;
 }
 
 header.masthead {
@@ -123,5 +129,10 @@ header.masthead h1 {
 	top: 0;
 	left: 0;
 	opacity: 0.3;
+}
+
+.logo{
+	width: 540px;
+	height:150px;
 }
 

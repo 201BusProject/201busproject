@@ -1,6 +1,5 @@
 import React from "react";
 import Content from "./Content";
-import Footer from "./Footer";
 
 function About(props) {
   const { onClick } = props;
@@ -8,7 +7,6 @@ function About(props) {
   return (
     <div className="about">
       <Content onClick = {onClick}/>
-      <Footer />
     </div>
   );
 }

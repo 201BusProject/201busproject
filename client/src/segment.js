@@ -114,6 +114,7 @@ class Segment {
   };
 
   _removeSourceAndLayer = () => {
+    // this.map.removeLayer("busNo-"+this.routeId);
     this.map.removeLayer(this.busId);
     this.map.removeSource(this.busId);
   };

@@ -40,7 +40,7 @@ function Music() {
         <div className="row">
           <div className="col-lg-6">
             <p>
-              <h5>Bus stops</h5>
+              <h5 className="bold-four">Bus stops</h5>
               <br />
               There are 25 bus stop recordings in this folder. The recordings
               are of some of the main bus stops in the 201 bus route such as
@@ -64,7 +64,7 @@ function Music() {
         <div className="row">
           <div className="col-lg-6">
             <p>
-              <h5>Bus Journey Recordings</h5>
+              <h5 className="bold-four">Bus Journey Recordings</h5>
               <br />
               There are 16 recordings in this folder. Of the 16, 1 of them
               belongs to the 500 series and the rest to the 201 bus route. The
@@ -95,9 +95,6 @@ function Music() {
       <br />
       <br />
       {/* </section> */}
-      <div className="footer text-center py-3 bold-four">
-        <h2>201 BUS PROJECT</h2>
-      </div>
     </div>
   );
 }

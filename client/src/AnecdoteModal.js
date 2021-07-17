@@ -11,10 +11,11 @@ function AnecdoteModal(props) {
       centreMode: true,
       centerPadding: "20%",
       dots: true,
-      infinite: true,
+      infinite: false,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      autoplay: true
     };
     return (
       <div className="group-4">

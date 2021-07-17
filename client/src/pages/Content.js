@@ -15,7 +15,7 @@ function Content(props) {
             <br />
             <br />
             <br />
-            <h6 className="bold-four">
+            <h6>
               Having witnessed the stillness of Bangalore during lockdown in
               2020, the 201 Bus Project began as a means to archive the movement
               of the city by recording the sounds of the BMTC buses. The
@@ -35,7 +35,7 @@ function Content(props) {
               October 2020 to February 2021.
             </h6>
             <br />
-            <p className="bold-four">
+            <p>
               If you want to collaborate or contribute to mapping the sounds of
               Bangalore please get in touch via email.
               rukmini.swaminathan@gmail.com
@@ -51,12 +51,29 @@ function Content(props) {
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+          </div>
+        </div>
+        <div className="row">
+          <div className="text-left col-sm-7">
+            <p >
+              This project was made possible with support from
+              <br />
+              India Foundation for the Arts, under the __________ programme
+              <br />
+              <br />
+              <br />
+              <br />
+            </p>
+            <p className="names"> 
+              Sound Recordings: Rukmini Swaminathan
+              <br />
+              Illustrations: Arun Swaminathan
+              <br />
+              Website: Pranav Manglani, Sumit Chaturvedi
+            </p>
+          </div>
+          <div className="text-right">
+            <img src={`/assets/IFA_logo.png`} className="logo"/>
           </div>
         </div>
       </div>
