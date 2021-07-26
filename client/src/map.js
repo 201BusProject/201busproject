@@ -9,8 +9,7 @@ import Node from "./node";
 import Segment from "./segment";
 import { showRoute, hideRoute } from "./utils/geoOps";
 import { randomRoute } from "./utils/graphOps";
-import { ToastContainer, toast, cssTransition } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import StatusBar from "./StatusBar";
 
 
 mapboxgl.accessToken =
@@ -20,6 +19,7 @@ class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      status: "Pick any bus stop as source.",
       bus: undefined,
       latLng: [77.5985, 12.9433],
       zoom: 12.3,
@@ -36,12 +36,9 @@ class Map extends Component {
       const { graph } = this.state;
       if (typeof this.source === "undefined") {
         this.source = node.id;
-        toast.dark("Pick another Bus Stop as destination!", {
-          autoClose: false,
-        });
+        this.setState({status: "Pick another bus stop as destination."});
       } else {
         this.target = node.id;
-        toast.dismiss();
         // Get a sequence of links from source to target.
         const links = randomRoute(graph, {
           source: this.source,
@@ -68,7 +65,7 @@ class Map extends Component {
             }
           );
           segments.map(seg =>
-            seg.onBegin(() => this.setState({ bus: seg.link.bus }))
+            seg.onBegin(() => this.setState({ bus: seg.link.bus, status: "You are on bus " + seg.link.bus + ". Enjoy Your Journey!" }))
           );
           segments[0].beginAnimate();
         }
@@ -110,16 +107,18 @@ class Map extends Component {
   }
 
   render() {
-    const { bus } = this.state;
+    const { bus, status } = this.state;
     return (
       <div>
+        <div>
+          <StatusBar bus = {bus} status = {status}/>
+        </div>
         {bus && (
           <div className="anecdote-modal Show">
             <AnecdoteModal bus={bus} />
           </div>
         )}
         <div className="map-container" ref={this.mapContainerRef} />
-        <ToastContainer/>
       </div>
     );
   }
