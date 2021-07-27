@@ -78,7 +78,7 @@ class Map extends Component {
     const { latLng, zoom, graph } = this.state;
     this.map = new mapboxgl.Map({
       container: this.mapContainerRef.current,
-      style: "mapbox://styles/mapbox/streets-v11",
+      style: "mapbox://styles/pranman1110/ckky1iti20m1l17n5swewr7m3",
       center: latLng,
       zoom: zoom
     });

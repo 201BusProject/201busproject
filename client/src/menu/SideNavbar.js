@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
@@ -16,7 +17,7 @@ function SideNavbar(props) {
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="nav-text">
               <Link to="/" onClick={() => onClick("about")}>
-                <FaIcons.FaHome />
+                <AiIcons.AiFillHome />
               </Link>
             </li>
             <li className="nav-text">

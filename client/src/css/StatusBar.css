@@ -1,6 +1,6 @@
  .status-bar {
     z-index: 12;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(160, 120, 94, 0.5);
     width: 90vw;
     height: 70px;
     display: flex;
@@ -16,11 +16,24 @@
      color: black;
      /* background-color: blue; */
      text-align: left;
- } 
+     /* text-shadow: 2px 2px 4px #000000; */
+    } 
 
- .status-btn{
+ .status-btns {
     margin: 10px;
     text-align: right;
     /* background-color: blue; */
  }
  
+ .status-bar-btn {
+    margin: 0px 10px 0px 0px;
+    background-color: transparent;
+    color: black;
+    margin-left: 0;
+    font-weight: 600;
+}
+
+.tatus-bar-btn:hover {
+    background-color: white;
+    color: black;
+}

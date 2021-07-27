@@ -1,3 +1,3 @@
-const routeColor = "#20B2AA";
+const routeColor = "#996c6c";
 
 export default routeColor;

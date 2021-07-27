@@ -22,11 +22,11 @@ function StatusBar(props) {
         <div className = "status col-lg-9">
             <h6 className="bold-four">{status}</h6>
         </div>
-        <div className = "status-btn col-sm-2">
-          <button className = "btn btn-dark start start-two">
+        <div className = "status-btns col-sm-2">
+          <button className = "btn btn-dark start status-bar-btn">
             <FaIcons.FaUndo />
           </button>
-          <button className = "btn btn-dark start start-two">
+          <button className = "btn btn-dark start status-bar-btn">
             <FaIcons.FaPause />
           </button>
         </div>
