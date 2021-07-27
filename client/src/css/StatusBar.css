@@ -1,6 +1,6 @@
  .status-bar {
     z-index: 12;
-    background-color: black;
+    background-color: rgba(255,255,255,0.5);
     width: 90vw;
     height: 70px;
     display: flex;
@@ -8,12 +8,19 @@
     top: 10px;
     left: 80px;
     right: 100px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
  }  
  .status {
      margin: 10px;
-     color: white;
-     justify-content: left;
+     color: black;
+     /* background-color: blue; */
+     text-align: left;
  } 
+
+ .status-btn{
+    margin: 10px;
+    text-align: right;
+    /* background-color: blue; */
+ }
  

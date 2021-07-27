@@ -8,7 +8,9 @@ function Music() {
         <div className="row">
           <div className="col-lg-6">
             <p className="talk">
-              <h2>Sound Album</h2>
+              <h2>Sound Archive</h2>
+              <br />
+              <h5 className="bold-four">Sound Album</h5>
               <br />
               The 201 sound album is a compilation of the 41 recordings that
               were taken between October 2020 to February 2021 for the 201 Bus
@@ -84,6 +86,7 @@ function Music() {
           </div>
         </div>
       </div>
+      <br />
       <br />
       <br />
       <br />

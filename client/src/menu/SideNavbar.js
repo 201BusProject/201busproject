@@ -15,6 +15,11 @@ function SideNavbar(props) {
         <nav className="nav-menu">
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="nav-text">
+              <Link to="/" onClick={() => onClick("about")}>
+                <FaIcons.FaHome />
+              </Link>
+            </li>
+            <li className="nav-text">
               <Link to="/" onClick={() => onClick("map")}>
                 <FaIcons.FaBus />
               </Link>
@@ -22,11 +27,6 @@ function SideNavbar(props) {
             <li className="nav-text">
               <Link to="/" onClick={() => onClick("music")}>
                 <FaIcons.FaMusic />
-              </Link>
-            </li>
-            <li className="nav-text">
-              <Link to="/" onClick={() => onClick("about")}>
-                <FaIcons.FaHome />
               </Link>
             </li>
           </ul>

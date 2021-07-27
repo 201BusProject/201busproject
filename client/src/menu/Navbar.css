@@ -1,6 +1,6 @@
 .navbar {
     position: absolute;
-    background-color: #060b26;
+    background-color: black;
     height: 100vh;
     width: 60px;
     display: flex;
@@ -31,7 +31,7 @@
   }
   .nav-menu {
     z-index: 11;
-    background-color: #060b26;
+    background-color: black;
     width: 70px;
     height: 100vh;
     display: flex;
