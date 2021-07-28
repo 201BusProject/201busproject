@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { useRef, Component } from "react";
+import ReactDOM from "react-dom";
 import "./css/Mapload.css";
 import "./css/Modal.css";
 import AnecdoteModal from "./AnecdoteModal";
@@ -10,6 +11,7 @@ import Segment from "./segment";
 import { showRoute, hideRoute } from "./utils/geoOps";
 import { randomRoute, getNodeIdxById } from "./utils/graphOps";
 import StatusBar from "./StatusBar";
+import Tooltip from "./tooltip";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoicHJhbm1hbjExMTAiLCJhIjoiY2trdmg3dDNqMjBidTJ1czFjZnJhdXczbCJ9.iiySDdrwpE0p-hFUAKtU7Q";
@@ -25,6 +27,7 @@ class Map extends Component {
       graph: graph
     };
     this.mapContainerRef = React.createRef();
+    this.tooltipRef = new mapboxgl.Popup({ offset: 15 });
     this.source = undefined;
     this.canHandleNodes = true;
     this.busStarted = false;
@@ -136,6 +139,22 @@ class Map extends Component {
       });
     });
 
+    this.map.on("mousemove", e => {
+      const features = this.map.queryRenderedFeatures(e.point);
+      if (features.length) {
+        const feature = features[0];
+        // Create tooltip node
+        const tooltipNode = document.createElement("div");
+        ReactDOM.render(<Tooltip feature={feature} />, tooltipNode);
+
+        // Set tooltip on map
+        this.tooltipRef
+          .setLngLat(e.lngLat)
+          .setDOMContent(tooltipNode)
+          .addTo(this.map);
+      }
+    });
+
     this.map.on("load", () => {
       this.nodes = graph.nodes.map(
         node =>
@@ -152,7 +171,12 @@ class Map extends Component {
     const { bus, status } = this.state;
     return (
       <div className="col">
-        <StatusBar bus={bus} status={status} pauseJourney = {this.pauseJourney} endJourney = {this.endJourney} />
+        <StatusBar
+          bus={bus}
+          status={status}
+          pauseJourney={this.pauseJourney}
+          endJourney={this.endJourney}
+        />
         {bus && (
           <div className="anecdote-modal Show">
             <AnecdoteModal bus={bus} />
