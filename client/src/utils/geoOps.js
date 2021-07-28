@@ -72,7 +72,7 @@ function showRoute(map, links, beforeId) {
   );
 }
 
-function hideRoute(map, links) {
+function hideRoute(map) {
   map.removeLayer("route");
   map.removeSource("route");
 }

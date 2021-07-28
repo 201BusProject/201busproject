@@ -3,18 +3,18 @@ import "./css/StatusBar.css";
 import * as FaIcons from "react-icons/fa";
 
 function StatusBar(props) {
-  const { status } = props;
+  const { status, endJourney, pauseJourney } = props;
   return (
     <div className="status-bar">
-      <div className="status col-lg-9">
+      <div className="status col-lg-8">
         <h6 className="bold-four">{status}</h6>
       </div>
-      <div className="status-btns col-sm-2">
-        <button className="btn btn-dark start status-bar-btn">
-          <FaIcons.FaUndo />
-        </button>
-        <button className="btn btn-dark start status-bar-btn">
+      <div className="status-btns col-sm-3">
+        <button className="btn btn-dark start status-bar-btn" onClick={pauseJourney}>
           <FaIcons.FaPause />
+        </button>
+        <button className="btn btn-dark start status-bar-btn" onClick={endJourney}>
+          <FaIcons.FaWindowClose />
         </button>
       </div>
     </div>

@@ -69,6 +69,16 @@ class Segment {
     }
   };
 
+  cancelAnimate = () => {
+    if(this.map.getSource(this.busId)){
+      this.audioPromise.then(() => {
+        this.audio.pause();
+        cancelAnimationFrame(this.rAF);
+        this._removeSourceAndLayer();
+      });
+    }
+  };
+
   _addSourceAndLayer = () => {
     this.map.addSource(this.busId, {
       type: "geojson",
@@ -87,16 +97,22 @@ class Segment {
       this.beforeId
     );
     this.map.on("click", this.busId, () => {
+      this.pauseOrRestartAnimate();
+    });
+  };
+
+  pauseOrRestartAnimate = () => {
+    if(this.map.getSource(this.busId)){
       if (this.audio.paused) {
         this.restartAnimate();
       } else {
         this.pauseAnimate();
       }
-    });
+    }
   };
 
   _removeSourceAndLayer = () => {
-    // this.map.removeLayer("busNo-"+this.routeId);
+    // this.map.removeLayer("busNo-"+this.routeId)
     this.map.removeLayer(this.busId);
     this.map.removeSource(this.busId);
   };

@@ -35,6 +35,14 @@ class Node {
     };
   };
 
+  pauseOrRestartAnimate = () => {
+    if(this.audio.paused){
+      this.audioPromise = this.audio.play();
+    } else {
+      this.audio.pause();
+    }
+  }
+
   add2Map = () => {
     this.map.addSource(this.node.id, {
       type: "geojson",
