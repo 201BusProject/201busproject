@@ -3,7 +3,7 @@ import "./css/StatusBar.css";
 import * as FaIcons from "react-icons/fa";
 
 function StatusBar(props) {
-  const { status } = props;
+  const { status, endJourney, pauseJourney } = props;
   return (
     <div className="row">
       <div className="col-sm-1" />

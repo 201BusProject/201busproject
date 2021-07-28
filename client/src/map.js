@@ -27,6 +27,7 @@ class Map extends Component {
     this.mapContainerRef = React.createRef();
     this.source = undefined;
     this.canHandleNodes = true;
+    this.busStarted = false;
     this.beforeId = graph.nodes[0].id;
   }
 
@@ -41,37 +42,66 @@ class Map extends Component {
     // chain them.
     if (links.length > 0) {
       this.canHandleNodes = false;
-      const segments = links.map(
+      this.segments = links.map(
         link => new Segment({ map: this.map, link }, this.beforeId)
       );
-      segments.slice(0, segments.length - 1).map((seg, i) => {
+      this.segments.slice(0, this.segments.length - 1).map((seg, i) => {
         return seg.onEnd(() => {
+          this.busStarted = false;
           this.setState({ bus: undefined });
-          const targetStop = this.nodes[getNodeIdxById(graph, seg.link.target)];
-          targetStop.onEnd(() => {
-            segments[i + 1].beginAnimate();
+          this.targetStop = this.nodes[getNodeIdxById(graph, seg.link.target)];
+          this.targetStop.onEnd(() => {
+            this.segments[i + 1].beginAnimate();
           });
-          targetStop.beginAnimate();
+          this.targetStop.beginAnimate();
         });
       });
-      segments[segments.length - 1].onEnd(() => {
-        this.setState({ bus: undefined, status: "" });
-        this.canHandleNodes = true;
-        hideRoute(this.map, links);
+      this.segments[this.segments.length - 1].onEnd(() => {
+        this.endJourney();
       });
-      segments.map(seg =>
-        seg.onBegin(() =>
+      this.segments.map(seg =>
+        seg.onBegin(() => {
+          this.busStarted = true;
           this.setState({
             bus: seg.link.bus,
             status: "You are on bus " + seg.link.bus + ". Enjoy Your Journey!"
-          })
-        )
+          });
+        })
       );
-      const sourceStop = this.nodes[getNodeIdxById(graph, this.source)];
-      sourceStop.onEnd(() => segments[0].beginAnimate());
-      sourceStop.beginAnimate();
+      this.sourceStop = this.nodes[getNodeIdxById(graph, this.source)];
+      this.sourceStop.onEnd(() => this.segments[0].beginAnimate());
+      this.sourceStop.beginAnimate();
     }
     this.source = undefined;
+  };
+
+  pauseJourney = () => {
+    if (!this.canHandleNodes) {
+      if (this.busStarted) {
+        this.segments.map(seg => seg.pauseOrRestartAnimate());
+      } else {
+        if (typeof this.sourceStop !== "undefined")
+          this.sourceStop.pauseOrRestartAnimate();
+        if (typeof this.targetStop !== "undefined")
+          this.targetStop.pauseOrRestartAnimate();
+      }
+    }
+  };
+
+  endJourney = () => {
+    if (!this.canHandleNodes) {
+      if (this.busStarted) {
+        this.segments.map(seg => seg.cancelAnimate());
+      } else {
+        if (typeof this.sourceStop !== "undefined")
+          this.sourceStop.pauseOrRestartAnimate();
+        if (typeof this.targetStop !== "undefined")
+          this.targetStop.pauseOrRestartAnimate();
+      }
+      this.setState({ bus: undefined, status: "Pick any bus stop as source." });
+      this.canHandleNodes = true;
+      hideRoute(this.map);
+    }
   };
 
   handleNodeClick = node => {
@@ -125,7 +155,7 @@ class Map extends Component {
         <StatusBar bus={bus} status={status} />
         {bus && (
           <div className="anecdote-modal Show">
-              <AnecdoteModal bus={bus} />
+            <AnecdoteModal bus={bus} />
           </div>
         )}
         <div className="map-container" ref={this.mapContainerRef} />
