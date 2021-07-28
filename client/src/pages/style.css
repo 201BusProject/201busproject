@@ -144,7 +144,8 @@
 }
 
 .soundcloud-button{
-    margin: auto;
+    margin-top: 60px;
+    /* margin: auto; */
 }
 .author {
     text-decoration: none !important;
