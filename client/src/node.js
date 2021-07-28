@@ -12,7 +12,28 @@ class Node {
     this.node = node;
     this.onClick = onClick;
     this.add2Map();
+    const url = `/audio/nodes/${node.id}.mp3`;
+    this.audio = new Audio(url);
+    this.beginFn = () => {};
+    this.endFn = () => {};
   }
+
+  onEnd = fn => {
+    this.endFn = fn;
+  };
+
+  onBegin = fn => {
+    this.beginFn = fn;
+  };
+
+  beginAnimate = () => {
+    this.beginFn();
+    this.audio.currentTime = 0;
+    this.audioPromise = this.audio.play();
+    this.audio.onended = () => {
+      this.endFn();
+    };
+  };
 
   add2Map = () => {
     this.map.addSource(this.node.id, {

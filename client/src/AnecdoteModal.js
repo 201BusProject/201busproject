@@ -24,7 +24,10 @@ function AnecdoteModal(props) {
             {range(1, 9).map(function(id) {
               return (
                 <div className="slide" key={id}>
-                  <img src={`/assets/bus-booklets/${bus}/${id}.jpg`} />
+                  <img
+                    alt="Anecdote"
+                    src={`/assets/bus-booklets/${bus}/${id}.jpg`}
+                  />
                 </div>
               );
             })}

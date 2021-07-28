@@ -8,9 +8,8 @@ import graph from "./data/connectivity";
 import Node from "./node";
 import Segment from "./segment";
 import { showRoute, hideRoute } from "./utils/geoOps";
-import { randomRoute } from "./utils/graphOps";
+import { randomRoute, getNodeIdxById } from "./utils/graphOps";
 import StatusBar from "./StatusBar";
-
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoicHJhbm1hbjExMTAiLCJhIjoiY2trdmg3dDNqMjBidTJ1czFjZnJhdXczbCJ9.iiySDdrwpE0p-hFUAKtU7Q";
@@ -31,45 +30,60 @@ class Map extends Component {
     this.beforeId = graph.nodes[0].id;
   }
 
+  runJourney = () => {
+    const { graph } = this.state;
+    // Get a sequence of links from source to target.
+    const links = randomRoute(graph, {
+      source: this.source,
+      target: this.target
+    });
+    showRoute(this.map, links, this.beforeId);
+    // chain them.
+    if (links.length > 0) {
+      this.canHandleNodes = false;
+      const segments = links.map(
+        link => new Segment({ map: this.map, link }, this.beforeId)
+      );
+      segments.slice(0, segments.length - 1).map((seg, i) => {
+        return seg.onEnd(() => {
+          this.setState({ bus: undefined });
+          const targetStop = this.nodes[getNodeIdxById(graph, seg.link.target)];
+          targetStop.onEnd(() => {
+            segments[i + 1].beginAnimate();
+          });
+          targetStop.beginAnimate();
+        });
+      });
+      segments[segments.length - 1].onEnd(() => {
+        this.setState({ bus: undefined, status: "" });
+        this.canHandleNodes = true;
+        hideRoute(this.map, links);
+      });
+      segments.map(seg =>
+        seg.onBegin(() =>
+          this.setState({
+            bus: seg.link.bus,
+            status: "You are on bus " + seg.link.bus + ". Enjoy Your Journey!"
+          })
+        )
+      );
+      const sourceStop = this.nodes[getNodeIdxById(graph, this.source)];
+      sourceStop.onEnd(() =>
+        segments[0].beginAnimate()
+      );
+      sourceStop.beginAnimate();
+    }
+    this.source = undefined;
+  };
+
   handleNodeClick = node => {
     if (this.canHandleNodes) {
-      const { graph } = this.state;
       if (typeof this.source === "undefined") {
         this.source = node.id;
-        this.setState({status: "Pick another bus stop as destination."});
+        this.setState({ status: "Pick another bus stop as destination." });
       } else {
         this.target = node.id;
-        // Get a sequence of links from source to target.
-        const links = randomRoute(graph, {
-          source: this.source,
-          target: this.target
-        });
-        showRoute(this.map, links, this.beforeId);
-        // chain them.
-        if (links.length > 0) {
-          this.canHandleNodes = false;
-          const segments = links.map(
-            link => new Segment({ map: this.map, link }, this.beforeId)
-          );
-          segments.slice(0, segments.length - 1).map((seg, i) => {
-            return seg.onEnd(() => {
-              this.setState({ bus: undefined });
-              segments[i + 1].beginAnimate();
-            });
-          });
-          segments[segments.length - 1].onEnd(
-            () => {
-              this.setState({ bus: undefined });
-              this.canHandleNodes = true;
-              hideRoute(this.map, links);
-            }
-          );
-          segments.map(seg =>
-            seg.onBegin(() => this.setState({ bus: seg.link.bus, status: "You are on bus " + seg.link.bus + ". Enjoy Your Journey!" }))
-          );
-          segments[0].beginAnimate();
-        }
-        this.source = undefined;
+        this.runJourney();
       }
     }
   };
@@ -111,7 +125,7 @@ class Map extends Component {
     return (
       <div>
         <div>
-          <StatusBar bus = {bus} status = {status}/>
+          <StatusBar bus={bus} status={status} />
         </div>
         {bus && (
           <div className="anecdote-modal Show">

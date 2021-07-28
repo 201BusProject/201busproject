@@ -31,6 +31,16 @@ function edges(graph, { source, target }) {
   return links.filter(l => l.source === source && l.target === target);
 }
 
+function getNodeIdxById(graph, id) {
+  const { nodes } = graph;
+  for (let i = 0; i < nodes.length; i++) {
+    if (nodes[i].id === id) {
+      return i;
+    }
+  }
+  return -1;
+}
+
 function randomRoute(graph, { source, target }) {
   const seen = [];
   const pathNodes = [];
@@ -52,4 +62,4 @@ function randomRoute(graph, { source, target }) {
     .slice(0, pathNodes.length - 1);
 }
 
-export { neighbors, reachable, edges, randomRoute };
+export { neighbors, reachable, edges, randomRoute, getNodeIdxById };

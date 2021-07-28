@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
 import "./landing-page.css";
-import { Link } from "react-router-dom";
 
 function Content(props) {
   const { onClick } = props;
@@ -64,7 +63,7 @@ function Content(props) {
             <br />
           </div>
           <div className="col-sm-3">
-            <img src={`/assets/IFA_logo_white.png`} className="logo"/> 
+            <img src={`/assets/IFA_logo_white.png`} alt="IFA" className="logo"/> 
           </div>
         </div>
       </div>
