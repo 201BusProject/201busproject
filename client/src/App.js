@@ -1,4 +1,3 @@
-import "./css/App.css";
 import Map from "./map";
 import SideNavbar from "./menu/SideNavbar";
 import Music from "./pages/Music";
@@ -16,15 +15,17 @@ function App() {
   const appComponents = {
     map: <Map />,
     music: <Music />,
-    about: <About onClick={handleSidebarClick}/>
+    about: <About onClick={handleSidebarClick} />
   };
 
   return (
-    <div className="App">
-      <Router basename="/">
-        <SideNavbar onClick={handleSidebarClick} />
-      </Router>
-      {appComponents[component]}
+    <div className="container-fluid">
+      <div className="row">
+        <Router basename="/">
+          <SideNavbar onClick={handleSidebarClick} />
+        </Router>
+        {appComponents[component]}
+      </div>
     </div>
   );
 }

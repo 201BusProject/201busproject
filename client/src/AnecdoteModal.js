@@ -18,7 +18,7 @@ function AnecdoteModal(props) {
       autoplay: true
     };
     return (
-      <div className="group-4">
+      <div className="anecdote-group">
         <div className="slider">
           <Slider {...settings}>
             {range(1, 9).map(function(id) {

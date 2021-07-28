@@ -68,9 +68,7 @@ class Map extends Component {
         )
       );
       const sourceStop = this.nodes[getNodeIdxById(graph, this.source)];
-      sourceStop.onEnd(() =>
-        segments[0].beginAnimate()
-      );
+      sourceStop.onEnd(() => segments[0].beginAnimate());
       sourceStop.beginAnimate();
     }
     this.source = undefined;
@@ -123,13 +121,11 @@ class Map extends Component {
   render() {
     const { bus, status } = this.state;
     return (
-      <div>
-        <div>
-          <StatusBar bus={bus} status={status} />
-        </div>
+      <div className="col">
+        <StatusBar bus={bus} status={status} />
         {bus && (
           <div className="anecdote-modal Show">
-            <AnecdoteModal bus={bus} />
+              <AnecdoteModal bus={bus} />
           </div>
         )}
         <div className="map-container" ref={this.mapContainerRef} />

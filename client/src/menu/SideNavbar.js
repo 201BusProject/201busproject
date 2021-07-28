@@ -13,21 +13,27 @@ function SideNavbar(props) {
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
-        <nav className="nav-menu">
+        <nav className="nav-menu col-sm-1">
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="nav-text">
               <Link to="/" onClick={() => onClick("about")}>
-                <AiIcons.AiFillHome />
+                <div className="translateGroup">
+                  <AiIcons.AiFillHome />
+                </div>
               </Link>
             </li>
             <li className="nav-text">
               <Link to="/" onClick={() => onClick("map")}>
-                <FaIcons.FaBus />
+                <div className="translateGroup">
+                  <FaIcons.FaBus />
+                </div>
               </Link>
             </li>
             <li className="nav-text">
               <Link to="/" onClick={() => onClick("music")}>
-                <FaIcons.FaMusic />
+                <div className="translateGroup">
+                  <FaIcons.FaMusic />
+                </div>
               </Link>
             </li>
           </ul>

@@ -2,16 +2,16 @@ import React from "react";
 
 function Music() {
   return (
-    <div className="about">
-      {/* <section class="features-icons text-center det-ails"> */}
+    <div className="about col">
       <div className="sound-container text-left">
+        <div className="row talk">
+          <h2>Sound Archive</h2>
+        </div>
         <div className="row">
           <div className="col-lg-6">
+            <h5 className="bold talk">Sound Album</h5>
+            <br />
             <p className="talk">
-              <h2>Sound Archive</h2>
-              <br />
-              <h5 className="bold-four">Sound Album</h5>
-              <br />
               The 201 sound album is a compilation of the 41 recordings that
               were taken between October 2020 to February 2021 for the 201 Bus
               Project. The tracks in the album are categories of sounds that
@@ -41,9 +41,9 @@ function Music() {
         </div>
         <div className="row">
           <div className="col-lg-6">
+            <h5 className="bold">Bus stops</h5>
+            <br />
             <p>
-              <h5 className="bold-four">Bus stops</h5>
-              <br />
               There are 25 bus stop recordings in this folder. The recordings
               are of some of the main bus stops in the 201 bus route such as
               Jeevan Bhima Nagar, Banashankari, Hampinagar, Srinagar,
@@ -65,8 +65,8 @@ function Music() {
         <br />
         <div className="row">
           <div className="col-lg-6">
+            <h5 className="bold">Bus Journey Recordings</h5>
             <p>
-              <h5 className="bold-four">Bus Journey Recordings</h5>
               <br />
               There are 16 recordings in this folder. Of the 16, 1 of them
               belongs to the 500 series and the rest to the 201 bus route. The
@@ -88,16 +88,6 @@ function Music() {
       </div>
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      {/* </section> */}
     </div>
   );
 }
