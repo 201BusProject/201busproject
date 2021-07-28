@@ -19,6 +19,7 @@ class Segment {
     this.beginFn = () => {};
     this.endFn = () => {};
     this.beforeId = beforeId;
+    this.ongoing = false;
   }
 
   onEnd = fn => {
@@ -32,6 +33,7 @@ class Segment {
   updateAnimation = () => {
     const { duration, currentTime, ended } = this.audio;
     if (ended) {
+      this.ongoing = false;
       cancelAnimationFrame(this.rAF);
       this._removeSourceAndLayer();
       this.endFn();
@@ -63,6 +65,7 @@ class Segment {
       this.audioPromise = this.audio.play();
       this._addSourceAndLayer();
       this.audioPromise.then(() => {
+        this.ongoing = true;
         this.rAF = requestAnimationFrame(this.updateAnimation);
       });
       this.beginFn();
@@ -70,11 +73,17 @@ class Segment {
   };
 
   cancelAnimate = () => {
-    if(this.map.getSource(this.busId)){
+    if (!this.ongoing) {
+      return;
+    } else if (this.audio.paused) {
+      this._removeSourceAndLayer();
+      return;
+    } else {
       this.audioPromise.then(() => {
         this.audio.pause();
         cancelAnimationFrame(this.rAF);
         this._removeSourceAndLayer();
+        this.ongoing = false;
       });
     }
   };
@@ -96,13 +105,10 @@ class Segment {
       },
       this.beforeId
     );
-    this.map.on("click", this.busId, () => {
-      this.pauseOrRestartAnimate();
-    });
   };
 
   pauseOrRestartAnimate = () => {
-    if(this.map.getSource(this.busId)){
+    if (this.ongoing) {
       if (this.audio.paused) {
         this.restartAnimate();
       } else {
@@ -112,7 +118,6 @@ class Segment {
   };
 
   _removeSourceAndLayer = () => {
-    // this.map.removeLayer("busNo-"+this.routeId)
     this.map.removeLayer(this.busId);
     this.map.removeSource(this.busId);
   };

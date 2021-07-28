@@ -16,6 +16,7 @@ class Node {
     this.audio = new Audio(url);
     this.beginFn = () => {};
     this.endFn = () => {};
+    this.ongoing = false;
   }
 
   onEnd = fn => {
@@ -30,18 +31,38 @@ class Node {
     this.beginFn();
     this.audio.currentTime = 0;
     this.audioPromise = this.audio.play();
+    this.audioPromise.then(() => {
+      this.ongoing = true;
+    });
     this.audio.onended = () => {
       this.endFn();
+      this.ongoing = false;
     };
   };
 
-  pauseOrRestartAnimate = () => {
-    if(this.audio.paused){
-      this.audioPromise = this.audio.play();
+  cancelAnimate = () => {
+    if (!this.ongoing) {
+      return;
     } else {
-      this.audio.pause();
+      this.audioPromise.then(() => {
+        this.audio.pause();
+        cancelAnimationFrame(this.rAF);
+        this.ongoing = false;
+      });
     }
-  }
+  };
+
+  pauseOrRestartAnimate = () => {
+    if (this.ongoing) { 
+      if (this.audio.paused) {
+        this.audioPromise = this.audio.play();
+      } else {
+        this.audioPromise.then(() => {
+          this.audio.pause();
+        });
+      }
+    }
+  };
 
   add2Map = () => {
     this.map.addSource(this.node.id, {

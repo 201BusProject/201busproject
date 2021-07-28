@@ -3,7 +3,7 @@ import "./css/StatusBar.css";
 import * as FaIcons from "react-icons/fa";
 
 function StatusBar(props) {
-  const { status, endJourney, pauseJourney } = props;
+  const { status, endJourney, pauseJourney, journeyPaused } = props;
   return (
     <div className="row">
       <div className="col-sm-1" />
@@ -16,15 +16,15 @@ function StatusBar(props) {
             <div className="status-btns">
               <button
                 className="btn btn-dark start status-bar-btn"
-                onClick={endJourney}
+                onClick={pauseJourney}
               >
-                <FaIcons.FaUndo />
+                {journeyPaused ? <FaIcons.FaPlay /> : <FaIcons.FaPause />}
               </button>
               <button
                 className="btn btn-dark start status-bar-btn"
-                onClick={pauseJourney}
+                onClick={endJourney}
               >
-                <FaIcons.FaPause />
+                <FaIcons.FaWindowClose />
               </button>
             </div>
           </div>

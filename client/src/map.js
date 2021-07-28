@@ -1,4 +1,4 @@
-import React, { useRef, Component } from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./css/Mapload.css";
 import "./css/Modal.css";
@@ -24,7 +24,8 @@ class Map extends Component {
       bus: undefined,
       latLng: [77.5985, 12.9433],
       zoom: 12.3,
-      graph: graph
+      graph: graph,
+      journeyPaused: false
     };
     this.mapContainerRef = React.createRef();
     this.tooltipRef = new mapboxgl.Popup({ offset: 15 });
@@ -53,6 +54,9 @@ class Map extends Component {
           this.busStarted = false;
           this.setState({ bus: undefined });
           this.targetStop = this.nodes[getNodeIdxById(graph, seg.link.target)];
+          this.targetStop.onBegin(() =>
+            this.setState({ status: `Waiting at ${seg.link.target}` })
+          );
           this.targetStop.onEnd(() => {
             this.segments[i + 1].beginAnimate();
           });
@@ -67,11 +71,14 @@ class Map extends Component {
           this.busStarted = true;
           this.setState({
             bus: seg.link.bus,
-            status: "You are on bus " + seg.link.bus + ". Enjoy Your Journey!"
+            status: `Starting journey on bus ${seg.link.bus}`
           });
         })
       );
       this.sourceStop = this.nodes[getNodeIdxById(graph, this.source)];
+      this.sourceStop.onBegin(() =>
+        this.setState({ status: `Waiting at ${this.source} ...` })
+      );
       this.sourceStop.onEnd(() => this.segments[0].beginAnimate());
       this.sourceStop.beginAnimate();
     }
@@ -80,31 +87,24 @@ class Map extends Component {
 
   pauseJourney = () => {
     if (!this.canHandleNodes) {
-      if (this.busStarted) {
-        this.segments.map(seg => seg.pauseOrRestartAnimate());
-      } else {
-        if (typeof this.sourceStop !== "undefined")
-          this.sourceStop.pauseOrRestartAnimate();
-        if (typeof this.targetStop !== "undefined")
-          this.targetStop.pauseOrRestartAnimate();
-      }
+      this.setState(function(prevState, props) {
+        return { journeyPaused: !prevState.journeyPaused };
+      });
+      this.segments.map(seg => seg.pauseOrRestartAnimate());
+      this.nodes.map(node => node.pauseOrRestartAnimate());
     }
   };
 
   endJourney = () => {
-    if (!this.canHandleNodes) {
-      if (this.busStarted) {
-        this.segments.map(seg => seg.cancelAnimate());
-      } else {
-        if (typeof this.sourceStop !== "undefined")
-          this.sourceStop.pauseOrRestartAnimate();
-        if (typeof this.targetStop !== "undefined")
-          this.targetStop.pauseOrRestartAnimate();
-      }
-      this.setState({ bus: undefined, status: "Pick any bus stop as source." });
-      this.canHandleNodes = true;
-      hideRoute(this.map);
-    }
+    this.segments.map(seg => seg.cancelAnimate());
+    this.nodes.map(node => node.cancelAnimate());
+    hideRoute(this.map);
+    this.setState({
+      status: "Pick any bus stop as source.",
+      journeyPaused: false,
+      bus: undefined
+    });
+    this.canHandleNodes = true;
   };
 
   handleNodeClick = node => {
@@ -176,6 +176,7 @@ class Map extends Component {
           status={status}
           pauseJourney={this.pauseJourney}
           endJourney={this.endJourney}
+          journeyPaused={this.state.journeyPaused}
         />
         {bus && (
           <div className="anecdote-modal Show">
