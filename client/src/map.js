@@ -152,7 +152,7 @@ class Map extends Component {
     const { bus, status } = this.state;
     return (
       <div className="col">
-        <StatusBar bus={bus} status={status} />
+        <StatusBar bus={bus} status={status} pauseJourney = {this.pauseJourney} endJourney = {this.endJourney} />
         {bus && (
           <div className="anecdote-modal Show">
             <AnecdoteModal bus={bus} />

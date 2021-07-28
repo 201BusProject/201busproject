@@ -14,10 +14,16 @@ function StatusBar(props) {
               <h6 className="bold">{status}</h6>
             </div>
             <div className="status-btns">
-              <button className="btn btn-dark start status-bar-btn">
+              <button
+                className="btn btn-dark start status-bar-btn"
+                onClick={endJourney}
+              >
                 <FaIcons.FaUndo />
               </button>
-              <button className="btn btn-dark start status-bar-btn">
+              <button
+                className="btn btn-dark start status-bar-btn"
+                onClick={pauseJourney}
+              >
                 <FaIcons.FaPause />
               </button>
             </div>
