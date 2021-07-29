@@ -122,11 +122,28 @@ class Map extends Component {
       if (typeof this.source === "undefined") {
         this.source = node.id;
         this.setState({ status: "Pick another bus stop as destination." });
+        this.nodes.map(nodeClass => {
+          this.displayPopup(nodeClass.node);
+        });
       } else {
         this.target = node.id;
         this.runJourney();
+        this.displayPopup(node);
+        this.displayPopup(this.sourceStop.node);
       }
     }
+  };
+
+  displayPopup = node => {
+    // Create tooltip node
+    const tooltipNode = document.createElement("div");
+    ReactDOM.render(<Tooltip node={node} />, tooltipNode);
+
+    // Set tooltip on map
+    new mapboxgl.Popup({ offset: 15, closeButton: false })
+      .setLngLat(node.location.coordinates)
+      .setDOMContent(tooltipNode)
+      .addTo(this.map);
   };
 
   handleNodeHover = node => {
