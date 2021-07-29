@@ -1,7 +1,8 @@
 .nav-menu {
 	background-color: black;
-	padding: 12px 12px 12px 12px;
+	padding: 10px 10px 10px 10px;
 	height: 100vh;
+	width: 100px;
 }
 
 .nav-text {

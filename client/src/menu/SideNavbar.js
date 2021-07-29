@@ -13,7 +13,7 @@ function SideNavbar(props) {
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
-        <nav className="nav-menu col-sm-1">
+        <nav className="nav-menu col-auto">
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="nav-text">
               <Link to="/" onClick={() => onClick("about")}>
