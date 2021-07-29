@@ -84,6 +84,8 @@ const graph = {
   links: [
     {
       bus: "201",
+      length: 0.08018348205681641,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -142,14 +144,15 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
-      length: 0.08018348205681641,
-      audio: true,
+      breakpoints: { "0": 0, "18": 1 },
       source: "Srinagar",
       target: "Banashankari TTMC",
       key: 0
     },
     {
       bus: "201B",
+      length: 0.08530223054897028,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -206,14 +209,15 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
-      length: 0.08530223054897028,
-      audio: true,
+      breakpoints: { "0": 0, "14": 1, "48": 2 },
       source: "Girinagar Phase 2",
       target: "Banashankari TTMC",
       key: 0
     },
     {
       bus: "201K",
+      length: 0.021088561982459758,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -243,14 +247,15 @@ const graph = {
           [77.56373405456542, 12.912485732739587]
         ]
       },
-      length: 0.021088561982459758,
-      audio: true,
+      breakpoints: {},
       source: "Banashankari TTMC",
       target: "JHBCS Colony",
       key: 0
     },
     {
       bus: "201K",
+      length: 0.0813434475463154,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -288,14 +293,15 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
-      length: 0.0813434475463154,
-      audio: true,
+      breakpoints: { "4": 7, "15": 6, "27": 5 },
       source: "Banashankari TTMC",
       target: "Madiwala Police Station",
       key: 0
     },
     {
       bus: "201B",
+      length: 0.0813434475463154,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -333,14 +339,15 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
-      length: 0.0813434475463154,
-      audio: true,
+      breakpoints: { "13": 3, "30": 4 },
       source: "Banashankari TTMC",
       target: "Madiwala Police Station",
       key: 1
     },
     {
       bus: "201M",
+      length: 0.0797752803960714,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -381,14 +388,15 @@ const graph = {
           [77.62115478515625, 12.919701324835888]
         ]
       },
-      length: 0.0797752803960714,
-      audio: true,
+      breakpoints: { "6": 3, "22": 4 },
       source: "Banashankari TTMC",
       target: "Madiwala Police Station",
       key: 2
     },
     {
       bus: "201",
+      length: 0.0813434475463154,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -426,14 +434,15 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
-      length: 0.0813434475463154,
-      audio: true,
+      breakpoints: { "1": 2, "15": 3, "31": 4 },
       source: "Banashankari TTMC",
       target: "Madiwala Police Station",
       key: 3
     },
     {
       bus: "201B",
+      length: 0.08530223054897026,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -490,14 +499,15 @@ const graph = {
           [77.54510879516602, 12.940803120702384]
         ]
       },
-      length: 0.08530223054897026,
-      audio: true,
+      breakpoints: { "2": 2, "36": 1, "50": 0 },
       source: "Banashankari TTMC",
       target: "Girinagar Phase 2",
       key: 0
     },
     {
       bus: "201C",
+      length: 0.055882486360162666,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -543,14 +553,15 @@ const graph = {
           [77.62235641479492, 12.918320966816218]
         ]
       },
-      length: 0.055882486360162666,
-      audio: true,
+      breakpoints: { "0": 0, "13": 1, "16": 2, "23": 3, "29": 4 },
       source: "Banashankari TTMC",
       target: "Silk Board",
       key: 0
     },
     {
       bus: "201G",
+      length: 0.05020397679253592,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -593,14 +604,15 @@ const graph = {
           [77.62231349945068, 12.91815365017429]
         ]
       },
-      length: 0.05020397679253592,
-      audio: true,
+      breakpoints: { "7": 7, "20": 6 },
       source: "Banashankari TTMC",
       target: "Silk Board",
       key: 1
     },
     {
       bus: "201M",
+      length: 0.11113891615985144,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -670,14 +682,15 @@ const graph = {
           [77.5357961654663, 12.958766473438937]
         ]
       },
-      length: 0.11113891615985144,
-      audio: true,
+      breakpoints: { "30": 2, "48": 1, "63": 0 },
       source: "Banashankari TTMC",
       target: "Hampinagar",
       key: 0
     },
     {
       bus: "201",
+      length: 0.0801834820568164,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -736,14 +749,15 @@ const graph = {
           [77.5541853904724, 12.94452555160944]
         ]
       },
-      length: 0.0801834820568164,
-      audio: true,
+      breakpoints: { "34": 1, "52": 0 },
       source: "Banashankari TTMC",
       target: "Srinagar",
       key: 0
     },
     {
       bus: "201K",
+      length: 0.08134344754631537,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -781,14 +795,15 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
-      length: 0.08134344754631537,
-      audio: true,
+      breakpoints: { "4": 5, "16": 6, "27": 7 },
       source: "Madiwala Police Station",
       target: "Banashankari TTMC",
       key: 0
     },
     {
       bus: "201B",
+      length: 0.08134344754631537,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -826,14 +841,15 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
-      length: 0.08134344754631537,
-      audio: true,
+      breakpoints: { "1": 4, "18": 3 },
       source: "Madiwala Police Station",
       target: "Banashankari TTMC",
       key: 1
     },
     {
       bus: "201M",
+      length: 0.0797752803960714,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -874,14 +890,15 @@ const graph = {
           [77.57293939590453, 12.916815113004484]
         ]
       },
-      length: 0.0797752803960714,
-      audio: true,
+      breakpoints: { "12": 4, "28": 3 },
       source: "Madiwala Police Station",
       target: "Banashankari TTMC",
       key: 2
     },
     {
       bus: "201",
+      length: 0.08134344754631537,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -919,14 +936,15 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
-      length: 0.08134344754631537,
-      audio: true,
+      breakpoints: { "0": 4, "16": 3, "30": 2 },
       source: "Madiwala Police Station",
       target: "Banashankari TTMC",
       key: 3
     },
     {
       bus: "201K",
+      length: 0.14857558299470286,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -982,14 +1000,15 @@ const graph = {
           [77.63823509216309, 12.961631288850846]
         ]
       },
-      length: 0.14857558299470286,
-      audio: true,
+      breakpoints: { "4": 4, "14": 3, "27": 2, "43": 1, "49": 0 },
       source: "Madiwala Police Station",
       target: "Ambedkar Terminal, Domlur",
       key: 0
     },
     {
       bus: "201B",
+      length: 0.14857558299470286,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1045,14 +1064,15 @@ const graph = {
           [77.63823509216309, 12.961631288850846]
         ]
       },
-      length: 0.14857558299470286,
-      audio: true,
+      breakpoints: { "8": 5, "23": 6, "41": 7 },
       source: "Madiwala Police Station",
       target: "Ambedkar Terminal, Domlur",
       key: 1
     },
     {
       bus: "201",
+      length: 0.14857558299470286,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1108,14 +1128,15 @@ const graph = {
           [77.63823509216309, 12.961631288850846]
         ]
       },
-      length: 0.14857558299470286,
-      audio: true,
+      breakpoints: { "0": 4, "8": 5, "23": 6, "41": 7 },
       source: "Madiwala Police Station",
       target: "Ambedkar Terminal, Domlur",
       key: 2
     },
     {
       bus: "201C",
+      length: 0.03405034093715902,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1135,14 +1156,15 @@ const graph = {
           [77.63420104980469, 12.925264508609228]
         ]
       },
-      length: 0.03405034093715902,
-      audio: true,
+      breakpoints: { "1": 5, "5": 6, "9": 7 },
       source: "Madiwala Police Station",
       target: "Koramangala",
       key: 0
     },
     {
       bus: "201C",
+      length: 0.0034965451316367876,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1150,14 +1172,15 @@ const graph = {
           [77.62235641479492, 12.918320966816218]
         ]
       },
-      length: 0.0034965451316367876,
-      audio: true,
+      breakpoints: {},
       source: "Madiwala Police Station",
       target: "Silk Board",
       key: 0
     },
     {
       bus: "201G",
+      length: 0.0038293257128186892,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1166,14 +1189,15 @@ const graph = {
           [77.62231349945068, 12.91815365017429]
         ]
       },
-      length: 0.0038293257128186892,
-      audio: true,
+      breakpoints: {},
       source: "Madiwala Police Station",
       target: "Silk Board",
       key: 1
     },
     {
       bus: "201Q",
+      length: 0.003601528963803433,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1181,14 +1205,15 @@ const graph = {
           [77.62224912643431, 12.918132735586159]
         ]
       },
-      length: 0.003601528963803433,
-      audio: true,
+      breakpoints: { "1": 0 },
       source: "Madiwala Police Station",
       target: "Silk Board",
       key: 2
     },
     {
       bus: "201G",
+      length: 0.10717446685488359,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1236,14 +1261,15 @@ const graph = {
           [77.65466630458832, 12.966806692963083]
         ]
       },
-      length: 0.10717446685488359,
-      audio: true,
+      breakpoints: { "1": 5, "7": 4, "17": 3, "27": 2, "30": 1, "41": 0 },
       source: "Madiwala Police Station",
       target: "Jeevan Bhima Nagar Depot",
       key: 0
     },
     {
       bus: "201M",
+      length: 0.12263362961027686,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1286,14 +1312,15 @@ const graph = {
           [77.65475749969482, 12.967716298322783]
         ]
       },
-      length: 0.12263362961027686,
-      audio: true,
+      breakpoints: { "3": 5, "14": 6, "25": 7 },
       source: "Madiwala Police Station",
       target: "Jeevan Bhima Nagar Depot",
       key: 1
     },
     {
       bus: "201Q",
+      length: 0.10689543391615942,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1354,14 +1381,23 @@ const graph = {
           [77.65468239784241, 12.966827603468463]
         ]
       },
-      length: 0.10689543391615942,
-      audio: true,
+      breakpoints: {
+        "5": 1,
+        "9": 2,
+        "19": 3,
+        "32": 4,
+        "40": 5,
+        "41": 6,
+        "46": 7
+      },
       source: "Madiwala Police Station",
       target: "Jeevan Bhima Nagar Depot",
       key: 2
     },
     {
       bus: "201D",
+      length: 0.076538930884054,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1442,14 +1478,24 @@ const graph = {
           [77.64081001281738, 12.978547665142747]
         ]
       },
-      length: 0.076538930884054,
-      audio: true,
+      breakpoints: {
+        "0": 0,
+        "8": 1,
+        "16": 2,
+        "23": 3,
+        "32": 4,
+        "45": 5,
+        "56": 6,
+        "66": 7
+      },
       source: "Madiwala Police Station",
       target: "Indiranagar Police Station",
       key: 0
     },
     {
       bus: "201G",
+      length: 0.10717446685488358,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1497,14 +1543,15 @@ const graph = {
           [77.62033939361572, 12.92118624691555]
         ]
       },
-      length: 0.10717446685488358,
-      audio: true,
+      breakpoints: { "0": 0, "11": 1, "14": 2, "24": 3, "34": 4, "40": 5 },
       source: "Jeevan Bhima Nagar Depot",
       target: "Madiwala Police Station",
       key: 0
     },
     {
       bus: "201M",
+      length: 0.12263362961027688,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1547,14 +1594,15 @@ const graph = {
           [77.62115478515625, 12.919701324835888]
         ]
       },
-      length: 0.12263362961027688,
-      audio: true,
+      breakpoints: { "11": 7, "22": 6, "33": 5 },
       source: "Jeevan Bhima Nagar Depot",
       target: "Madiwala Police Station",
       key: 1
     },
     {
       bus: "201Q",
+      length: 0.10689543391615945,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1615,14 +1663,23 @@ const graph = {
           [77.62033939361572, 12.92118624691555]
         ]
       },
-      length: 0.10689543391615945,
-      audio: true,
+      breakpoints: {
+        "8": 7,
+        "13": 6,
+        "14": 5,
+        "22": 4,
+        "35": 3,
+        "45": 2,
+        "49": 1
+      },
       source: "Jeevan Bhima Nagar Depot",
       target: "Madiwala Police Station",
       key: 2
     },
     {
       bus: "201K",
+      length: 0.14857558299470291,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1678,14 +1735,15 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
-      length: 0.14857558299470291,
-      audio: true,
+      breakpoints: { "0": 0, "6": 1, "22": 2, "35": 3, "45": 4 },
       source: "Ambedkar Terminal, Domlur",
       target: "Madiwala Police Station",
       key: 0
     },
     {
       bus: "201B",
+      length: 0.14857558299470291,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1741,14 +1799,15 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
-      length: 0.14857558299470291,
-      audio: true,
+      breakpoints: { "8": 7, "26": 6, "41": 5 },
       source: "Ambedkar Terminal, Domlur",
       target: "Madiwala Police Station",
       key: 1
     },
     {
       bus: "201",
+      length: 0.14857558299470291,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1804,14 +1863,15 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
-      length: 0.14857558299470291,
-      audio: true,
+      breakpoints: { "8": 7, "26": 6, "41": 5, "49": 4 },
       source: "Ambedkar Terminal, Domlur",
       target: "Madiwala Police Station",
       key: 2
     },
     {
       bus: "201M",
+      length: 0.11113891615985147,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1881,14 +1941,15 @@ const graph = {
           [77.57293939590453, 12.916815113004484]
         ]
       },
-      length: 0.11113891615985147,
-      audio: true,
+      breakpoints: { "0": 0, "15": 1, "33": 2 },
       source: "Hampinagar",
       target: "Banashankari TTMC",
       key: 0
     },
     {
       bus: "201C",
+      length: 0.0034965451316367876,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1896,14 +1957,15 @@ const graph = {
           [77.62021064758301, 12.921081675227088]
         ]
       },
-      length: 0.0034965451316367876,
-      audio: true,
+      breakpoints: {},
       source: "Silk Board",
       target: "Madiwala Police Station",
       key: 0
     },
     {
       bus: "201G",
+      length: 0.0038293257128186892,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1912,14 +1974,15 @@ const graph = {
           [77.62033939361572, 12.92118624691555]
         ]
       },
-      length: 0.0038293257128186892,
-      audio: true,
+      breakpoints: {},
       source: "Silk Board",
       target: "Madiwala Police Station",
       key: 1
     },
     {
       bus: "201Q",
+      length: 0.003601528963803433,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1927,14 +1990,15 @@ const graph = {
           [77.62033939361572, 12.92118624691555]
         ]
       },
-      length: 0.003601528963803433,
-      audio: true,
+      breakpoints: { "0": 0 },
       source: "Silk Board",
       target: "Madiwala Police Station",
       key: 2
     },
     {
       bus: "201C",
+      length: 0.05588248636016268,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -1980,14 +2044,15 @@ const graph = {
           [77.57308959960938, 12.917400723898771]
         ]
       },
-      length: 0.05588248636016268,
-      audio: true,
+      breakpoints: { "10": 4, "16": 3, "23": 2, "26": 1, "39": 0 },
       source: "Silk Board",
       target: "Banashankari TTMC",
       key: 0
     },
     {
       bus: "201G",
+      length: 0.050203976792535916,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -2030,14 +2095,15 @@ const graph = {
           [77.57396936416626, 12.917609870314054]
         ]
       },
-      length: 0.050203976792535916,
-      audio: true,
+      breakpoints: { "16": 6, "29": 7 },
       source: "Silk Board",
       target: "Banashankari TTMC",
       key: 1
     },
     {
       bus: "201D",
+      length: 0.076538930884054,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -2118,14 +2184,24 @@ const graph = {
           [77.62055397033691, 12.920496072962548]
         ]
       },
-      length: 0.076538930884054,
-      audio: true,
+      breakpoints: {
+        "8": 7,
+        "18": 6,
+        "29": 5,
+        "42": 4,
+        "51": 3,
+        "58": 2,
+        "66": 1,
+        "74": 0
+      },
       source: "Indiranagar Police Station",
       target: "Madiwala Police Station",
       key: 0
     },
     {
       bus: "201C",
+      length: 0.03405034093715902,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -2145,14 +2221,15 @@ const graph = {
           [77.62021064758301, 12.921081675227088]
         ]
       },
-      length: 0.03405034093715902,
-      audio: true,
+      breakpoints: { "4": 7, "8": 6, "12": 5 },
       source: "Koramangala",
       target: "Madiwala Police Station",
       key: 0
     },
     {
       bus: "201K",
+      length: 0.021088561982459758,
+      audio: true,
       route: {
         type: "LineString",
         coordinates: [
@@ -2182,8 +2259,7 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
-      length: 0.021088561982459758,
-      audio: true,
+      breakpoints: {},
       source: "JHBCS Colony",
       target: "Banashankari TTMC",
       key: 0

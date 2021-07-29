@@ -8,7 +8,7 @@ import { featuredGeometry, interpolate, clamp } from "./utils/geoOps";
 import * as turf from "@turf/turf";
 
 class Segment {
-  constructor({ map, link }, beforeId) {
+  constructor({ map, link }, beforeId, handleSlider) {
     this.map = map;
     this.link = link;
     const { source, target, bus } = link;
@@ -20,6 +20,7 @@ class Segment {
     this.endFn = () => {};
     this.beforeId = beforeId;
     this.ongoing = false;
+    this.handleSlider = handleSlider;
   }
 
   onEnd = fn => {
@@ -39,13 +40,16 @@ class Segment {
       this.endFn();
       return;
     }
-    const { route } = this.link;
+    const { route, breakpoints } = this.link;
     const { coordinates } = route;
     const { length } = coordinates;
     const fraction = currentTime / duration;
     const routeFraction = length * fraction;
     const id = Math.floor(routeFraction);
     const fp = routeFraction % 1;
+    if (typeof breakpoints[id] !== "undefined") {
+      this.handleSlider(breakpoints[id]);
+    }
     const prev = coordinates[clamp(id, [0, length - 1])];
     const next = coordinates[clamp(id + 1, [0, length - 1])];
     let point = interpolate(prev, next, fp);

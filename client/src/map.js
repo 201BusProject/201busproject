@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./css/Mapload.css";
-import AnecdoteModal from "./AnecdoteModal";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import { ZoomControl } from "mapbox-gl-controls";
 import graph from "./data/connectivity";
@@ -11,6 +10,9 @@ import { showRoute, hideRoute } from "./utils/geoOps";
 import { shortestRoute, getNodeIdxById } from "./utils/graphOps";
 import StatusBar from "./StatusBar";
 import Tooltip from "./tooltip";
+import { range } from "lodash";
+import "./css/AnecdoteModal.css";
+import Slider from "react-slick";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoicHJhbm1hbjExMTAiLCJhIjoiY2trdmg3dDNqMjBidTJ1czFjZnJhdXczbCJ9.iiySDdrwpE0p-hFUAKtU7Q";
@@ -34,6 +36,12 @@ class Map extends Component {
     this.beforeId = graph.nodes[0].id;
   }
 
+  handleSlider = slideId => {
+    if (typeof this.slider !== "undefined") {
+      this.slider.slickGoTo(slideId);
+    }
+  };
+
   runJourney = () => {
     const { graph } = this.state;
     // Get a sequence of links from source to target.
@@ -46,7 +54,8 @@ class Map extends Component {
     if (links.length > 0) {
       this.canHandleNodes = false;
       this.segments = links.map(
-        link => new Segment({ map: this.map, link }, this.beforeId)
+        link =>
+          new Segment({ map: this.map, link }, this.beforeId, this.handleSlider)
       );
       this.segments.slice(0, this.segments.length - 1).map((seg, i) => {
         return seg.onEnd(() => {
@@ -54,7 +63,7 @@ class Map extends Component {
           this.setState({ bus: undefined });
           this.targetStop = this.nodes[getNodeIdxById(graph, seg.link.target)];
           this.targetStop.onBegin(() =>
-            this.setState({ status: `Waiting at ${seg.link.target}` })
+            this.setState({ status: `Waiting at ${seg.link.target} ...` })
           );
           this.targetStop.onEnd(() => {
             this.segments[i + 1].beginAnimate();
@@ -95,7 +104,7 @@ class Map extends Component {
   };
 
   endJourney = () => {
-    if (!this.canHandleNodes) { 
+    if (!this.canHandleNodes) {
       this.segments.map(seg => seg.cancelAnimate());
       this.nodes.map(node => node.cancelAnimate());
       hideRoute(this.map);
@@ -121,16 +130,16 @@ class Map extends Component {
   };
 
   handleNodeHover = node => {
-      // Create tooltip node
-      const tooltipNode = document.createElement("div");
-      ReactDOM.render(<Tooltip node={node} />, tooltipNode);
+    // Create tooltip node
+    const tooltipNode = document.createElement("div");
+    ReactDOM.render(<Tooltip node={node} />, tooltipNode);
 
-      // Set tooltip on map
-      this.tooltipRef
-        .setLngLat(node.location.coordinates)
-        .setDOMContent(tooltipNode)
-        .addTo(this.map);
-    };
+    // Set tooltip on map
+    this.tooltipRef
+      .setLngLat(node.location.coordinates)
+      .setDOMContent(tooltipNode)
+      .addTo(this.map);
+  };
 
   componentDidMount() {
     const { latLng, zoom, graph } = this.state;
@@ -167,6 +176,14 @@ class Map extends Component {
 
   render() {
     const { bus, status } = this.state;
+    const settings = {
+      centreMode: true,
+      centerPadding: "20%",
+      infinite: false,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
     return (
       <div className="col">
         <StatusBar
@@ -176,7 +193,25 @@ class Map extends Component {
           endJourney={this.endJourney}
           journeyPaused={this.state.journeyPaused}
         />
-        {bus && <AnecdoteModal bus={bus} />}
+        {bus && (
+          <div className="row anecdote-modal">
+            <div className="anecdote-group">
+              <div className="slider">
+                <Slider {...settings} ref={slider => (this.slider = slider)}>
+                  {range(1, 9).map(function(id) {
+                    return (
+                      <img
+                        key={id}
+                        alt="Anecdote"
+                        src={`/assets/bus-booklets/${bus}/${id}.jpg`}
+                      />
+                    );
+                  })}
+                </Slider>
+              </div>
+            </div>
+          </div>
+        )}
         <div className="map-container" ref={this.mapContainerRef} />
       </div>
     );

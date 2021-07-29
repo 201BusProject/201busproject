@@ -3,8 +3,7 @@
  *
  * @author Sumit Chaturvedi
  */
-import { randomSelect } from "./randomOps";
-import { uniq, zip } from "lodash";
+import { uniq } from "lodash";
 import { FibonacciHeap } from "@tyriar/fibonacci-heap";
 
 function neighbors(graph, node) {
@@ -78,27 +77,6 @@ function shortestRoute(graph, { source, target }) {
     ptr = backLinks[ptr].source;
   }
   return route.reverse();
-}
-
-function randomRoute(graph, { source, target }) {
-  const seen = [];
-  const pathNodes = [];
-  const dfs = s => {
-    seen.push(s);
-    if (s === target) {
-      pathNodes.push(s);
-      return true;
-    }
-    const nbrs = neighbors(graph, s).filter(t => !seen.includes(t));
-    const isTherePaths = nbrs.map(dfs);
-    return isTherePaths.some(x => x) && pathNodes.push(s);
-  };
-  dfs(source);
-  pathNodes.reverse();
-  const pairs = zip(pathNodes, pathNodes.slice(1));
-  return pairs
-    .map(([source, target]) => randomSelect(edges(graph, { source, target })))
-    .slice(0, pathNodes.length - 1);
 }
 
 export { neighbors, reachable, edges, shortestRoute, getNodeIdxById };

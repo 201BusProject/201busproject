@@ -5,6 +5,7 @@ import os.path as osp
 import matplotlib.pyplot as plt
 import numpy as np
 from copy import deepcopy
+from bisect import bisect_left, bisect_right
 
 with open('busstops.geojson') as fd : 
     busStopData = json.load(fd)
@@ -57,9 +58,19 @@ def routeLen (coords) :
     delta = list(map(lambda x, y : x - y, coords, coords[1:]))
     return sum(map(np.linalg.norm, delta))
 
+def calculateChangePoints (coordinates) : 
+    totalLen = routeLen(coordinates)
+    pts = [12.5 * i for i in range(8)]
+    idx = []
+    percentages = [100 * routeLen(coordinates[:i]) / totalLen for i in range(len(coordinates))]
+    for pt in pts : 
+        idx.append(bisect_left(percentages, pt))
+    return idx
+
 def route(a, b, k): 
     routedata = deepcopy(next(getGeometry(allBusData[k], 'LineString')))
     ls = np.array(routedata['coordinates'])
+    breakpoints = calculateChangePoints(routedata['coordinates'])
     mean = ls.mean(0)
     std = 1 # ls.std()
     aPt = np.array(pos[a])
@@ -70,10 +81,15 @@ def route(a, b, k):
     i = np.argmin(((normLS - normA) ** 2).sum(1))
     j = np.argmin(((normLS - normB) ** 2).sum(1))
     if i < j : 
+        breakpoints = dict([(int(thing - i), breakpoints.index(thing)) for thing in breakpoints[bisect_left(breakpoints, i):bisect_right(breakpoints, j)]])
         routedata['coordinates'] = routedata['coordinates'][i:j+1]
     else :
+        breakpoints = dict([(int(i - thing), breakpoints.index(thing)) for thing in breakpoints[bisect_left(breakpoints, j):bisect_right(breakpoints, i)]][::-1])
         routedata['coordinates'] = routedata['coordinates'][j:i+1][::-1]
-    return routedata
+    return dict(
+        route=routedata,
+        breakpoints=breakpoints,
+    )
 
 for k, v in busDict.items() : 
     condensedBusDict[k] = list(filter(lambda x : x in busStops, v))
@@ -87,23 +103,23 @@ for k, v in condensedBusDict.items() :
         count += osp.exists(f2)
         front = route(a, b, k)
         back = route(b, a, k)
-        frontLen = routeLen(front['coordinates'])
-        backLen = routeLen(back['coordinates'])
+        frontLen = routeLen(front['route']['coordinates'])
+        backLen = routeLen(back['route']['coordinates'])
         connectivityGraph.add_edge(
             a, 
             b, 
             bus=k, 
-            route=route(a, b, k),
             length=frontLen,
-            audio=osp.exists(f1)
+            audio=osp.exists(f1),
+            **front
         )
         connectivityGraph.add_edge(
             b, 
             a, 
             bus=k, 
-            route=route(b, a, k),
             length=backLen,
-            audio=osp.exists(f2)
+            audio=osp.exists(f2),
+            **back
         )
     
 
