@@ -1,11 +1,10 @@
 import React from "react";
 
-const Tooltip = ({ feature }) => {
-  const { id } = feature.properties;
+const Tooltip = ({ node }) => {
 
   return (
-    <div id={`tooltip-${id}`}>
-      {feature.layer.id}
+    <div id={`tooltip-${node.id}`}>
+      {node.id}
     </div>
   );
 };

@@ -5,12 +5,15 @@
  */
 import buslayout from "./utils/buslayout";
 import { featuredGeometry } from "./utils/geoOps";
+import ReactDOM from "react-dom";
+import Tooltip from "./tooltip";
 
 class Node {
-  constructor({ map, node, onClick }) {
+  constructor({ map, node, onClick, onHover }) {
     this.map = map;
     this.node = node;
     this.onClick = onClick;
+    this.onHover = onHover;
     this.add2Map();
     const url = `/audio/nodes/${node.id}.mp3`;
     this.audio = new Audio(url);
@@ -79,7 +82,8 @@ class Node {
       }
     });
     this.map.on("click", this.node.id, this.onClick);
-  };
+    this.map.on("mousemove", this.node.id, this.onHover);
+  }
 }
 
 export default Node;

@@ -6,6 +6,7 @@ function Music() {
       <div className="row">
         <div className="col talk aboutText text-left">
           <h2>Sound Archive</h2>
+          <br />
           <div className="row">
             <div className="col">
               <h5 className="bold talk">Sound Album</h5>

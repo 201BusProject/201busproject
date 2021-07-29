@@ -28,7 +28,7 @@ class Map extends Component {
       journeyPaused: false
     };
     this.mapContainerRef = React.createRef();
-    this.tooltipRef = new mapboxgl.Popup({ offset: 15 });
+    this.tooltipRef = new mapboxgl.Popup({ offset: 15, closeButton: false });
     this.source = undefined;
     this.canHandleNodes = true;
     this.busStarted = false;
@@ -119,6 +119,18 @@ class Map extends Component {
     }
   };
 
+  handleNodeHover = node => {
+      // Create tooltip node
+      const tooltipNode = document.createElement("div");
+      ReactDOM.render(<Tooltip node={node} />, tooltipNode);
+
+      // Set tooltip on map
+      this.tooltipRef
+        .setLngLat(node.location.coordinates)
+        .setDOMContent(tooltipNode)
+        .addTo(this.map);
+    };
+
   componentDidMount() {
     const { latLng, zoom, graph } = this.state;
     this.map = new mapboxgl.Map({
@@ -139,21 +151,22 @@ class Map extends Component {
       });
     });
 
-    this.map.on("mousemove", e => {
-      const features = this.map.queryRenderedFeatures(e.point);
-      if (features.length) {
-        const feature = features[0];
-        // Create tooltip node
-        const tooltipNode = document.createElement("div");
-        ReactDOM.render(<Tooltip feature={feature} />, tooltipNode);
+    // this.map.on("mousemove", e => {
+    //   const features = this.map.queryRenderedFeatures(e.point);
+    //   if (features.length) {
+    //     const feature = features[0];
+    //     // Create tooltip node
+    //     console.log(feature);
+    //     const tooltipNode = document.createElement("div");
+    //     ReactDOM.render(<Tooltip feature={feature} />, tooltipNode);
 
-        // Set tooltip on map
-        this.tooltipRef
-          .setLngLat(e.lngLat)
-          .setDOMContent(tooltipNode)
-          .addTo(this.map);
-      }
-    });
+    //     // Set tooltip on map
+    //     this.tooltipRef
+    //       .setLngLat(e.lngLat)
+    //       .setDOMContent(tooltipNode)
+    //       .addTo(this.map);
+    //   }
+    // });
 
     this.map.on("load", () => {
       this.nodes = graph.nodes.map(
@@ -161,7 +174,8 @@ class Map extends Component {
           new Node({
             map: this.map,
             node: node,
-            onClick: () => this.handleNodeClick(node)
+            onClick: () => this.handleNodeClick(node),
+            onHover: () => this.handleNodeHover(node)
           })
       );
     });
