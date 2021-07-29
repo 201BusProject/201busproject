@@ -5,8 +5,6 @@
  */
 import buslayout from "./utils/buslayout";
 import { featuredGeometry } from "./utils/geoOps";
-import ReactDOM from "react-dom";
-import Tooltip from "./tooltip";
 
 class Node {
   constructor({ map, node, onClick, onHover }) {

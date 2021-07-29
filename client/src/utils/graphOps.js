@@ -5,6 +5,7 @@
  */
 import { randomSelect } from "./randomOps";
 import { uniq, zip } from "lodash";
+import { FibonacciHeap } from "@tyriar/fibonacci-heap";
 
 function neighbors(graph, node) {
   return uniq(
@@ -41,6 +42,44 @@ function getNodeIdxById(graph, id) {
   return -1;
 }
 
+function shortestRoute(graph, { source, target }) {
+  const { nodes } = graph;
+  const Q = new FibonacciHeap();
+  const backLinks = {};
+  const distances = {};
+  for (let i = 0; i < nodes.length; i++) {
+    distances[nodes[i].id] = Infinity;
+  }
+  distances[source] = 0;
+  Q.insert(0, source);
+  while (!Q.isEmpty()) {
+    const { value } = Q.extractMinimum();
+    if (value === target) {
+      break;
+    }
+    const nbrs = neighbors(graph, value);
+    for (let i = 0; i < nbrs.length; i++) {
+      const options = edges(graph, { source: value, target: nbrs[i] });
+      for (let j = 0; j < options.length; j++) {
+        const link = options[j];
+        const newCost = distances[value] + link.length;
+        if (newCost < distances[nbrs[i]]) {
+          distances[nbrs[i]] = newCost;
+          Q.insert(newCost, nbrs[i]);
+          backLinks[nbrs[i]] = link;
+        }
+      }
+    }
+  }
+  const route = [];
+  let ptr = target;
+  while (ptr !== source) {
+    route.push(backLinks[ptr]);
+    ptr = backLinks[ptr].source;
+  }
+  return route.reverse();
+}
+
 function randomRoute(graph, { source, target }) {
   const seen = [];
   const pathNodes = [];
@@ -62,4 +101,4 @@ function randomRoute(graph, { source, target }) {
     .slice(0, pathNodes.length - 1);
 }
 
-export { neighbors, reachable, edges, randomRoute, getNodeIdxById };
+export { neighbors, reachable, edges, shortestRoute, getNodeIdxById };

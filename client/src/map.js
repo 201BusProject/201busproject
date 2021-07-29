@@ -8,7 +8,7 @@ import graph from "./data/connectivity";
 import Node from "./node";
 import Segment from "./segment";
 import { showRoute, hideRoute } from "./utils/geoOps";
-import { randomRoute, getNodeIdxById } from "./utils/graphOps";
+import { shortestRoute, getNodeIdxById } from "./utils/graphOps";
 import StatusBar from "./StatusBar";
 import Tooltip from "./tooltip";
 
@@ -37,7 +37,7 @@ class Map extends Component {
   runJourney = () => {
     const { graph } = this.state;
     // Get a sequence of links from source to target.
-    const links = randomRoute(graph, {
+    const links = shortestRoute(graph, {
       source: this.source,
       target: this.target
     });
@@ -95,15 +95,17 @@ class Map extends Component {
   };
 
   endJourney = () => {
-    this.segments.map(seg => seg.cancelAnimate());
-    this.nodes.map(node => node.cancelAnimate());
-    hideRoute(this.map);
-    this.setState({
-      status: "Pick any bus stop as source.",
-      journeyPaused: false,
-      bus: undefined
-    });
-    this.canHandleNodes = true;
+    if (!this.canHandleNodes) { 
+      this.segments.map(seg => seg.cancelAnimate());
+      this.nodes.map(node => node.cancelAnimate());
+      hideRoute(this.map);
+      this.setState({
+        status: "Pick any bus stop as source.",
+        journeyPaused: false,
+        bus: undefined
+      });
+      this.canHandleNodes = true;
+    }
   };
 
   handleNodeClick = node => {
@@ -149,23 +151,6 @@ class Map extends Component {
         latLng: [lng, lat]
       });
     });
-
-    // this.map.on("mousemove", e => {
-    //   const features = this.map.queryRenderedFeatures(e.point);
-    //   if (features.length) {
-    //     const feature = features[0];
-    //     // Create tooltip node
-    //     console.log(feature);
-    //     const tooltipNode = document.createElement("div");
-    //     ReactDOM.render(<Tooltip feature={feature} />, tooltipNode);
-
-    //     // Set tooltip on map
-    //     this.tooltipRef
-    //       .setLngLat(e.lngLat)
-    //       .setDOMContent(tooltipNode)
-    //       .addTo(this.map);
-    //   }
-    // });
 
     this.map.on("load", () => {
       this.nodes = graph.nodes.map(

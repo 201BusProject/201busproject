@@ -142,6 +142,7 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
+      length: 0.08018348205681641,
       audio: true,
       source: "Srinagar",
       target: "Banashankari TTMC",
@@ -205,6 +206,7 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
+      length: 0.08530223054897028,
       audio: true,
       source: "Girinagar Phase 2",
       target: "Banashankari TTMC",
@@ -241,6 +243,7 @@ const graph = {
           [77.56373405456542, 12.912485732739587]
         ]
       },
+      length: 0.021088561982459758,
       audio: true,
       source: "Banashankari TTMC",
       target: "JHBCS Colony",
@@ -285,6 +288,7 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
+      length: 0.0813434475463154,
       audio: true,
       source: "Banashankari TTMC",
       target: "Madiwala Police Station",
@@ -329,6 +333,7 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
+      length: 0.0813434475463154,
       audio: true,
       source: "Banashankari TTMC",
       target: "Madiwala Police Station",
@@ -376,6 +381,7 @@ const graph = {
           [77.62115478515625, 12.919701324835888]
         ]
       },
+      length: 0.0797752803960714,
       audio: true,
       source: "Banashankari TTMC",
       target: "Madiwala Police Station",
@@ -420,6 +426,7 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
+      length: 0.0813434475463154,
       audio: true,
       source: "Banashankari TTMC",
       target: "Madiwala Police Station",
@@ -483,6 +490,7 @@ const graph = {
           [77.54510879516602, 12.940803120702384]
         ]
       },
+      length: 0.08530223054897026,
       audio: true,
       source: "Banashankari TTMC",
       target: "Girinagar Phase 2",
@@ -535,6 +543,7 @@ const graph = {
           [77.62235641479492, 12.918320966816218]
         ]
       },
+      length: 0.055882486360162666,
       audio: true,
       source: "Banashankari TTMC",
       target: "Silk Board",
@@ -584,6 +593,7 @@ const graph = {
           [77.62231349945068, 12.91815365017429]
         ]
       },
+      length: 0.05020397679253592,
       audio: true,
       source: "Banashankari TTMC",
       target: "Silk Board",
@@ -660,6 +670,7 @@ const graph = {
           [77.5357961654663, 12.958766473438937]
         ]
       },
+      length: 0.11113891615985144,
       audio: true,
       source: "Banashankari TTMC",
       target: "Hampinagar",
@@ -725,6 +736,7 @@ const graph = {
           [77.5541853904724, 12.94452555160944]
         ]
       },
+      length: 0.0801834820568164,
       audio: true,
       source: "Banashankari TTMC",
       target: "Srinagar",
@@ -769,6 +781,7 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
+      length: 0.08134344754631537,
       audio: true,
       source: "Madiwala Police Station",
       target: "Banashankari TTMC",
@@ -813,6 +826,7 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
+      length: 0.08134344754631537,
       audio: true,
       source: "Madiwala Police Station",
       target: "Banashankari TTMC",
@@ -860,6 +874,7 @@ const graph = {
           [77.57293939590453, 12.916815113004484]
         ]
       },
+      length: 0.0797752803960714,
       audio: true,
       source: "Madiwala Police Station",
       target: "Banashankari TTMC",
@@ -904,6 +919,7 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
+      length: 0.08134344754631537,
       audio: true,
       source: "Madiwala Police Station",
       target: "Banashankari TTMC",
@@ -966,6 +982,7 @@ const graph = {
           [77.63823509216309, 12.961631288850846]
         ]
       },
+      length: 0.14857558299470286,
       audio: true,
       source: "Madiwala Police Station",
       target: "Ambedkar Terminal, Domlur",
@@ -1028,6 +1045,7 @@ const graph = {
           [77.63823509216309, 12.961631288850846]
         ]
       },
+      length: 0.14857558299470286,
       audio: true,
       source: "Madiwala Police Station",
       target: "Ambedkar Terminal, Domlur",
@@ -1090,6 +1108,7 @@ const graph = {
           [77.63823509216309, 12.961631288850846]
         ]
       },
+      length: 0.14857558299470286,
       audio: true,
       source: "Madiwala Police Station",
       target: "Ambedkar Terminal, Domlur",
@@ -1116,6 +1135,7 @@ const graph = {
           [77.63420104980469, 12.925264508609228]
         ]
       },
+      length: 0.03405034093715902,
       audio: true,
       source: "Madiwala Police Station",
       target: "Koramangala",
@@ -1130,6 +1150,7 @@ const graph = {
           [77.62235641479492, 12.918320966816218]
         ]
       },
+      length: 0.0034965451316367876,
       audio: true,
       source: "Madiwala Police Station",
       target: "Silk Board",
@@ -1145,6 +1166,7 @@ const graph = {
           [77.62231349945068, 12.91815365017429]
         ]
       },
+      length: 0.0038293257128186892,
       audio: true,
       source: "Madiwala Police Station",
       target: "Silk Board",
@@ -1159,6 +1181,7 @@ const graph = {
           [77.62224912643431, 12.918132735586159]
         ]
       },
+      length: 0.003601528963803433,
       audio: true,
       source: "Madiwala Police Station",
       target: "Silk Board",
@@ -1213,6 +1236,7 @@ const graph = {
           [77.65466630458832, 12.966806692963083]
         ]
       },
+      length: 0.10717446685488359,
       audio: true,
       source: "Madiwala Police Station",
       target: "Jeevan Bhima Nagar Depot",
@@ -1262,6 +1286,7 @@ const graph = {
           [77.65475749969482, 12.967716298322783]
         ]
       },
+      length: 0.12263362961027686,
       audio: true,
       source: "Madiwala Police Station",
       target: "Jeevan Bhima Nagar Depot",
@@ -1329,6 +1354,7 @@ const graph = {
           [77.65468239784241, 12.966827603468463]
         ]
       },
+      length: 0.10689543391615942,
       audio: true,
       source: "Madiwala Police Station",
       target: "Jeevan Bhima Nagar Depot",
@@ -1416,6 +1442,7 @@ const graph = {
           [77.64081001281738, 12.978547665142747]
         ]
       },
+      length: 0.076538930884054,
       audio: true,
       source: "Madiwala Police Station",
       target: "Indiranagar Police Station",
@@ -1470,6 +1497,7 @@ const graph = {
           [77.62033939361572, 12.92118624691555]
         ]
       },
+      length: 0.10717446685488358,
       audio: true,
       source: "Jeevan Bhima Nagar Depot",
       target: "Madiwala Police Station",
@@ -1519,6 +1547,7 @@ const graph = {
           [77.62115478515625, 12.919701324835888]
         ]
       },
+      length: 0.12263362961027688,
       audio: true,
       source: "Jeevan Bhima Nagar Depot",
       target: "Madiwala Police Station",
@@ -1586,6 +1615,7 @@ const graph = {
           [77.62033939361572, 12.92118624691555]
         ]
       },
+      length: 0.10689543391615945,
       audio: true,
       source: "Jeevan Bhima Nagar Depot",
       target: "Madiwala Police Station",
@@ -1648,6 +1678,7 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
+      length: 0.14857558299470291,
       audio: true,
       source: "Ambedkar Terminal, Domlur",
       target: "Madiwala Police Station",
@@ -1710,6 +1741,7 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
+      length: 0.14857558299470291,
       audio: true,
       source: "Ambedkar Terminal, Domlur",
       target: "Madiwala Police Station",
@@ -1772,6 +1804,7 @@ const graph = {
           [77.62066125869751, 12.920433329781327]
         ]
       },
+      length: 0.14857558299470291,
       audio: true,
       source: "Ambedkar Terminal, Domlur",
       target: "Madiwala Police Station",
@@ -1848,6 +1881,7 @@ const graph = {
           [77.57293939590453, 12.916815113004484]
         ]
       },
+      length: 0.11113891615985147,
       audio: true,
       source: "Hampinagar",
       target: "Banashankari TTMC",
@@ -1862,6 +1896,7 @@ const graph = {
           [77.62021064758301, 12.921081675227088]
         ]
       },
+      length: 0.0034965451316367876,
       audio: true,
       source: "Silk Board",
       target: "Madiwala Police Station",
@@ -1877,6 +1912,7 @@ const graph = {
           [77.62033939361572, 12.92118624691555]
         ]
       },
+      length: 0.0038293257128186892,
       audio: true,
       source: "Silk Board",
       target: "Madiwala Police Station",
@@ -1891,6 +1927,7 @@ const graph = {
           [77.62033939361572, 12.92118624691555]
         ]
       },
+      length: 0.003601528963803433,
       audio: true,
       source: "Silk Board",
       target: "Madiwala Police Station",
@@ -1943,6 +1980,7 @@ const graph = {
           [77.57308959960938, 12.917400723898771]
         ]
       },
+      length: 0.05588248636016268,
       audio: true,
       source: "Silk Board",
       target: "Banashankari TTMC",
@@ -1992,6 +2030,7 @@ const graph = {
           [77.57396936416626, 12.917609870314054]
         ]
       },
+      length: 0.050203976792535916,
       audio: true,
       source: "Silk Board",
       target: "Banashankari TTMC",
@@ -2079,6 +2118,7 @@ const graph = {
           [77.62055397033691, 12.920496072962548]
         ]
       },
+      length: 0.076538930884054,
       audio: true,
       source: "Indiranagar Police Station",
       target: "Madiwala Police Station",
@@ -2105,6 +2145,7 @@ const graph = {
           [77.62021064758301, 12.921081675227088]
         ]
       },
+      length: 0.03405034093715902,
       audio: true,
       source: "Koramangala",
       target: "Madiwala Police Station",
@@ -2141,6 +2182,7 @@ const graph = {
           [77.57296085357666, 12.916794198304308]
         ]
       },
+      length: 0.021088561982459758,
       audio: true,
       source: "JHBCS Colony",
       target: "Banashankari TTMC",

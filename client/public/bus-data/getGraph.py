@@ -52,6 +52,11 @@ busDict = dict(zip(busNames, busRoutes))
 
 condensedBusDict = dict()
 
+def routeLen (coords) : 
+    coords = list(map(np.array, coords))
+    delta = list(map(lambda x, y : x - y, coords, coords[1:]))
+    return sum(map(np.linalg.norm, delta))
+
 def route(a, b, k): 
     routedata = deepcopy(next(getGeometry(allBusData[k], 'LineString')))
     ls = np.array(routedata['coordinates'])
@@ -78,14 +83,18 @@ for k, v in condensedBusDict.items() :
     for a, b in zip(v, v[1:]) :
         f1 = f'../audio/edges/{k}/{a}-{b}/audio.mp3'
         f2 = f'../audio/edges/{k}/{b}-{a}/audio.mp3'
-        print(k, a, b, osp.exists(f1), osp.exists(f2))
         count += osp.exists(f1)
         count += osp.exists(f2)
+        front = route(a, b, k)
+        back = route(b, a, k)
+        frontLen = routeLen(front['coordinates'])
+        backLen = routeLen(back['coordinates'])
         connectivityGraph.add_edge(
             a, 
             b, 
             bus=k, 
             route=route(a, b, k),
+            length=frontLen,
             audio=osp.exists(f1)
         )
         connectivityGraph.add_edge(
@@ -93,12 +102,11 @@ for k, v in condensedBusDict.items() :
             a, 
             bus=k, 
             route=route(b, a, k),
+            length=backLen,
             audio=osp.exists(f2)
         )
     
-print(count)
 
 finalData = nx.node_link_data(connectivityGraph) 
 with open('connectivity.json', 'w+') as fd : 
     json.dump(finalData, fd)
-print(connectivityGraph.number_of_edges(), connectivityGraph.number_of_nodes())
