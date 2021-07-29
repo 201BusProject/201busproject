@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./css/Mapload.css";
-import "./css/Modal.css";
 import AnecdoteModal from "./AnecdoteModal";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import { ZoomControl } from "mapbox-gl-controls";
@@ -178,11 +177,7 @@ class Map extends Component {
           endJourney={this.endJourney}
           journeyPaused={this.state.journeyPaused}
         />
-        {bus && (
-          <div className="anecdote-modal Show">
-            <AnecdoteModal bus={bus} />
-          </div>
-        )}
+        {bus && <AnecdoteModal bus={bus} />}
         <div className="map-container" ref={this.mapContainerRef} />
       </div>
     );
